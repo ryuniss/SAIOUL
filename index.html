@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Studio · 작업실 — Design & Architecture</title>
+  <title>SAIOUL — AI-Driven Spatial Designer</title>
   <meta name="description" content="디자이너이자 교육자. 건축, 조각, 공간, 가구, 오브제를 아우르는 포트폴리오."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;700&family=Noto+Sans+KR:wght@300;700;900&family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
   <style>
   /* ── Lang toggle ── */
@@ -69,10 +69,8 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div style="width:100%;max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
-      <a href="#home" class="nav-logo">
-        <span class="logo-en">STUDIO</span>
-        <span class="logo-divider">·</span>
-        <span class="logo-ko">작업실</span>
+      <a href="#home" class="nav-logo" style="font-family:'JetBrains Mono','Courier New',monospace;font-size:1.1rem;letter-spacing:-0.05em;font-weight:700;">
+        S<em style="font-style:italic;">AI</em>OUL
       </a>
       <ul class="nav-links">
         <li><a href="#works" class="nav-link">Practice</a></li>
@@ -101,64 +99,46 @@
     </ul>
   </div>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-scene" id="heroScene">
-      
-      <!-- SVG Wires on base plane (Z=0) -->
-      <svg class="hero-wires" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <path d="M50,85 C30,70 15,50 15,20" />
-        <path d="M50,85 C45,50 35,30 35,10" />
-        <path d="M50,85 C60,50 75,35 75,15" />
-        <path d="M50,85 C70,70 85,55 85,35" />
-        <path d="M50,85 C30,85 10,70 10,50" />
-        <path d="M50,85 C70,85 90,75 90,60" />
-      </svg>
+  <!-- HERO: SAIOUL KINETIC STEGANOGRAPHY -->
+  <section id="home" style="position:relative;width:100vw;height:100vh;overflow:hidden;background:#EFEFEA;">
+    <style>
+      @keyframes saioul-glitch {
+        0%  { clip-path:inset(20% 0 80% 0); transform:translate(-52%,-50%) scaleY(1.5); }
+        20% { clip-path:inset(40% 0 50% 0); transform:translate(-55%,-50%) scaleY(1.5); }
+        40% { clip-path:inset(10% 0 70% 0); transform:translate(-50%,-48%) scaleY(1.5); }
+        60% { clip-path:inset(70% 0 10% 0); transform:translate(-47%,-50%) scaleY(1.5); }
+        80% { clip-path:inset(50% 0 30% 0); transform:translate(-50%,-50%) scaleY(1.5); }
+        100%{ clip-path:inset(15% 0 60% 0); transform:translate(-51%,-50%) scaleY(1.5); }
+      }
+      .saioul-ai { font-family:'JetBrains Mono','Courier New',monospace; font-style:italic; }
+    </style>
 
-      <!-- Floating Nodes with various Z-depths for 3D parallax -->
-      <div class="hero-node" style="top:20%; left:15%; --z: 80px; --delay: 0s;">
-        <img src="assets/work_welcome_real.png" alt="Concept">
-        <span>Welcome</span>
-      </div>
-      <div class="hero-node" style="top:10%; left:35%; --z: 40px; --delay: -2s;">
-        <img src="assets/error/01.jpg" alt="Concept">
-        <span>ERROR</span>
-      </div>
-      <div class="hero-node" style="top:15%; left:75%; --z: 120px; --delay: -1s;">
-        <img src="assets/saioul/SAIOUL_Artwork.png" alt="Concept">
-        <span>S_AI_OUL</span>
-      </div>
-      <div class="hero-node" style="top:35%; left:85%; --z: 60px; --delay: -3s;">
-        <img src="assets/meut/meut_1.jpeg" alt="Concept">
-        <span>MEUT</span>
-      </div>
-      <div class="hero-node" style="top:50%; left:10%; --z: 100px; --delay: -1.5s;">
-        <img src="assets/shaa/1_fog_3.png" alt="Concept">
-        <span>SHAA</span>
-      </div>
-      <div class="hero-node" style="top:60%; left:90%; --z: 50px; --delay: -4s;">
-        <div class="text-node">IDEAS<br>COMPILE</div>
-      </div>
+    <!-- SVG displacement filter -->
+    <svg style="position:absolute;width:0;height:0;pointer-events:none;">
+      <filter id="saioul-distortion">
+        <feTurbulence type="fractalNoise" baseFrequency="0.015 0.1" numOctaves="1" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="60" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </svg>
 
-      <!-- The Person (Signature) in front of everything -->
-      <div class="hero-person" style="--z: 150px;">
-        <div class="person-placeholder">
-          [YOUR PORTRAIT<br>TRANSPARENT PNG]
-        </div>
+    <!-- Main warped text layer -->
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;text-align:center;pointer-events:none;filter:url(#saioul-distortion);z-index:30;">
+      <div style="position:absolute;top:8%;left:5%;font-family:'Noto Sans KR',sans-serif;font-weight:900;font-size:clamp(1rem,2vw,2rem);letter-spacing:-0.2em;color:#050505;opacity:0.5;transform:skew(-20deg) rotate(-10deg);">서_울/그.리.드.오.류</div>
+      <div style="position:absolute;bottom:8%;right:5%;font-family:'Noto Sans KR',sans-serif;font-weight:900;font-size:clamp(1rem,2vw,2rem);letter-spacing:-0.2em;color:#050505;opacity:0.5;transform:scaleY(-1) rotate(5deg);">충돌__중첩__데이터모싱</div>
+      <div style="font-size:clamp(5rem,22vw,28rem);font-weight:900;line-height:0.75;letter-spacing:-0.08em;text-transform:uppercase;color:#050505;transform:scaleY(1.5);mix-blend-mode:multiply;display:inline-block;">
+        S<span class="saioul-ai">AI</span>OUL<br>
+        S<span class="saioul-ai">AI</span>OUL
       </div>
-
-      <div class="hero-content" style="--z: 200px;">
-        <h1 class="hero-title">
-          <span class="line">AI-Driven</span>
-          <span class="line">Spatial</span>
-          <span class="line italic">Designer</span>
-        </h1>
-        <div class="hero-actions" style="pointer-events: auto;">
-          <a href="#works" class="btn-primary">ENTER MINDSCAPE</a>
-        </div>
-      </div>
-
     </div>
+
+    <!-- Red glitch slice layer -->
+    <div style="position:absolute;top:50%;left:50%;width:100%;transform:translate(-50%,-50%) scaleY(1.5);font-size:clamp(5rem,22vw,28rem);font-weight:900;line-height:0.75;letter-spacing:-0.08em;text-align:center;color:#FF2A00;mix-blend-mode:difference;pointer-events:none;animation:saioul-glitch 2s infinite linear alternate-reverse;z-index:31;">
+      S<span class="saioul-ai">AI</span>OUL<br>
+      S<span class="saioul-ai">AI</span>OUL
+    </div>
+
+    <!-- Enter button -->
+    <a href="#works" style="position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);font-family:'Courier New',monospace;font-size:0.8rem;text-decoration:none;color:#050505;border:1px solid #050505;padding:0.75rem 2.5rem;letter-spacing:0.2em;text-transform:uppercase;z-index:40;transition:background 0.2s,color 0.2s;" onmouseover="this.style.background='#050505';this.style.color='#EFEFEA'" onmouseout="this.style.background='transparent';this.style.color='#050505'">ENTER ↓</a>
   </section>
 
   <!-- WORKS -->
@@ -739,7 +719,7 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-logo">Studio · 작업실</span>
+      <span class="footer-logo" style="font-family:'JetBrains Mono','Courier New',monospace;letter-spacing:-0.05em;">S<em>AI</em>OUL</span>
       <span class="footer-copy">© 2025 ryuniss@snu.ac.kr</span>
     </div>
   </footer>
