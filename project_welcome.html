@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Welcome — Detail</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    /* Cargo Detail Brutalist Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f4f4f0;
+      --black: #050505;
+      --accent: #ff2a00;
+      --mono: 'Courier New', Courier, monospace;
+      --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --serif: 'Times New Roman', Times, serif;
+    }
+    body { background: var(--bg); color: var(--black); font-family: var(--sans); display: flex; overflow-x: hidden; }
+    
+    /* Left Panel: Fixed Metadata */
+    .detail-aside {
+      position: fixed; top: 0; left: 0; width: 35vw; height: 100vh;
+      border-right: 1px solid var(--black);
+      padding: 3rem 2rem; display: flex; flex-direction: column; justify-content: space-between;
+      background: var(--bg); z-index: 10;
+    }
+    .detail-close {
+      text-decoration: none; color: var(--black); font-weight: 900; font-size: 2rem;
+      align-self: flex-start; margin-bottom: 2rem; display: inline-block;
+      transition: color 0.2s; text-transform: uppercase;
+    }
+    .detail-close:hover { color: var(--accent); }
+    
+    .detail-title {
+      font-size: clamp(3rem, 6vw, 7rem); font-weight: 900; letter-spacing: -0.05em; text-transform: uppercase;
+      line-height: 0.9; margin-bottom: 2rem; word-break: break-all;
+    }
+    
+    .meta-list { list-style: none; border-top: 1px solid var(--black); margin-bottom: 2rem; }
+    .meta-list li {
+      display: flex; justify-content: space-between; padding: 1.2rem 0; border-bottom: 1px solid var(--black);
+      font-family: var(--mono); font-size: 0.85rem; text-transform: uppercase;
+    }
+    .meta-label { font-weight: 700; }
+    
+    .detail-desc {
+      font-family: var(--serif); font-size: 1.15rem; line-height: 1.6; padding-right: 1rem;
+    }
+
+    /* Right Panel: Scrollable Media */
+    .detail-main {
+      margin-left: 35vw; width: 65vw; min-height: 100vh; background: var(--black);
+    }
+    
+    /* Image Stack */
+    .media-img {
+      width: 100%; display: block; border-bottom: 1px solid var(--black);
+      filter: grayscale(20%); transition: filter 0.4s;
+    }
+    .media-img:hover { filter: grayscale(0%); }
+
+    /* Mobile Responsive */
+    @media (max-width: 800px) {
+      body { flex-direction: column; }
+      .detail-aside {
+        position: static; width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--black);
+      }
+      .detail-main { margin-left: 0; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="detail-aside">
+    <div>
+      <a href="index.html#works" class="detail-close">← BACK</a>
+      <h1 class="detail-title">환영하옴(Ω)니다</h1>
+      
+      <ul class="meta-list">
+        <li><span class="meta-label">Category</span><span>Exhibition / Installation</span></li>
+        <li><span class="meta-label">Context</span><span>ICA Seoul, SNU</span></li>
+        <li><span class="meta-label">Year</span><span>2025</span></li>
+      </ul>
+      
+      <p class="detail-desc">
+        Pin Branding 팀 전시, 서울대학교 문화예술원(ICA Seoul). 멈춘 발전소를 관람자의 움직임으로 다시 활성화하는 공간적 회로를 제안합니다. 전기와 저항(Ω), 그리고 환영이라는 키워드를 매개로 장소의 역사와 현재를 연결하는 설치 작업입니다.
+      </p>
+    </div>
+  </aside>
+
+  <main class="detail-main">
+    <img src="assets/work_welcome_real.png" alt="Main Artwork" class="media-img">
+    <img src="assets/welcome_pin_16.png" alt="Detail 1" class="media-img">
+    <img src="assets/welcome_pin_4.png" alt="Detail 2" class="media-img">
+    <img src="assets/welcome_pin_17.png" alt="Detail 3" class="media-img">
+    <img src="assets/welcome_pin_18.png" alt="Detail 4" class="media-img">
+  </main>
+
+</body>
+</html>

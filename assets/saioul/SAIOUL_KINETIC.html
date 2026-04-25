@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="ko" style="--cursor-x: 943px; --cursor-y: 100px;"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjIzMWY0NDIyYmI5Y2VmMTA3OTdkMjYzZjBlYzQ4ZDNiODVhOTg5NTAiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwMDI2NjEzMTAwNDk2OTI2NTQ3OSIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjX2ZjMTUxMGRkMmFiMjYzOTNfaW5kZXguaHRtbC0zMDIifSwiZXhwIjoxNzc2ODIxNTQ2LCJpYXQiOjE3NzY4MTc5NDYsImFsZyI6IlJTMjU2In0.TInevTnxHqLtsULXSD303RQIFm1HQAmHMWTH9SaoA4VKlB7nOTBi8I29_7DzsL_wKBwY_2885opo_fXFWsSCsLYfp3fVOAaYt5_aVm1KJIMGyKWehvpyd81H15rlYK4Sjr3d-5gXK_2SPgkQw9CIn8umeL0yqrzzuDgoM8N86msiCi3WWOjWlqxgPnq3cVirKUtegwqfKBeueYsleVrY5KiGmmIz2mN5g43TSEoqOG4xSSJU8nhy2NSivYdQhNb_SEvYqa9MqaiPaJ5Q8vfgfJN0_zPMU34SYtYNyT1XrcbJcIc09rHY-K2-MiS1t3C9yex7lTYKDuxsn8iaXw1aSA","c_fc1510dd2ab26393_index.html-302")</script><script>(function(){'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[];if(!e)return"";if(e===b)return`src: ${c};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+})();</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script ws-interception-config="{&quot;parentOrigin&quot;:&quot;https://gemini.google.com&quot;,&quot;proxiedDomains&quot;:[]}">(function(){'use strict';var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,d,e){if(b==Array.prototype||b==Object.prototype)return b;b[d]=e.value;return b};function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var d=0;d<b.length;++d){var e=b[d];if(e&&e.Math==Math)return e}throw Error("Cannot find global object");}var w=v(this);
+function y(b,d){if(d)a:{var e=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var k=b[h];if(!(k in e))break a;e=e[k]}b=b[b.length-1];h=e[b];d=d(h);d!=h&&d!=null&&u(e,b,{configurable:!0,writable:!0,value:d})}}function z(b){function d(h){return b.next(h)}function e(h){return b.throw(h)}return new Promise(function(h,k){function m(n){n.done?h(n.value):Promise.resolve(n.value).then(d,e).then(m,k)}m(b.next())})}y("globalThis",function(b){return b||w});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+function A(b,d){function e(){}e.prototype=d.prototype;b.i=d.prototype;b.prototype=new e;b.prototype.constructor=b;b.g=function(h,k,m){for(var n=Array(arguments.length-2),p=2;p<arguments.length;p++)n[p-2]=arguments[p];return d.prototype[k].apply(h,n)}};function B(b,d,e="*"){function h(a){if(typeof a==="string")return F.encode(a).buffer;if(a instanceof ArrayBuffer)return a.slice(0);if(ArrayBuffer.isView(a))return a.buffer.slice(a.byteOffset,a.byteOffset+a.byteLength);throw Error("Invalid data type");}function k(a){a=h(a);const f={type:"send",data:new Uint8Array(a)};let g;(g=r)==null||g.postMessage(f,[a])}function m(){if(!r)throw Error("Data port not captured yet.");r.onmessage=a=>{if(a.data.type==="message"){a=new MessageEvent("message",{data:G.decode(a.data.data)});
+let f;(f=c.onmessage)==null||f.call(c,a);c.dispatchEvent(a)}}}function n(){if(!t)throw Error("Control port not captured yet.");t.onmessage=a=>{switch(a.data.type){case "open":l=1;var f=new Event("open"),g;(g=c.onopen)==null||g.call(c,f);c.dispatchEvent(f);q.forEach(H=>{k(H)});q=[];break;case "close":g=a.data;l=3;g=new CloseEvent("close",{code:g.code,reason:g.reason,wasClean:g.wasClean});(f=c.onclose)==null||f.call(c,g);c.dispatchEvent(g);break;case "error":l=3;f=new Event("error");let x;(x=c.onerror)==
+null||x.call(c,f);c.dispatchEvent(f)}}}function p(a){return z(function*(){const f=new MessageChannel;t=f.port1;const g=new MessageChannel;r=g.port1;n();m();window.parent.postMessage({type:"websocket_open",portOrdering:["control","data"],url:b,protocols:a||[],connectionId:I},e,[f.port2,g.port2])}())}const c=Reflect.construct(EventTarget,[],new.target);c.CONNECTING=0;c.OPEN=1;c.CLOSING=2;c.CLOSED=3;c.url=b;c.binaryType="arraybuffer";c.protocol="";c.h="";let l=0,t=null,r=null,q=[];const F=new TextEncoder,
+G=new TextDecoder;c.onopen=null;c.onmessage=null;c.onclose=null;c.onerror=null;Object.defineProperty(c,"readyState",{get:()=>l,enumerable:!0,configurable:!0});Object.defineProperty(c,"bufferedAmount",{get:()=>{let a=0;q.forEach(f=>{a+=typeof f==="string"?f.length:f.byteLength});return a},enumerable:!0,configurable:!0});const I=function(){let a;return((a=globalThis.crypto)==null?0:a.randomUUID)?globalThis.crypto.randomUUID():"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,f=>{const g=Math.random()*
+16|0;return(f==="x"?g:g&3|8).toString(16)})}();c.send=a=>{if(l===1)a instanceof Blob?a.arrayBuffer().then(f=>{k(f)}):k(a);else if(l===0)if(typeof a==="string")q.push(a);else if(a instanceof ArrayBuffer||ArrayBuffer.isView(a))q.push(h(a));else throw Error("Sending Blob is not supported before the connection is open.");else console.debug("WebSocket send called in CLOSING or CLOSED state; ignored.")};c.close=(a=1E3,f="")=>{if(l!==2&&l!==3){l=2;a={type:"close",code:a,reason:f,wasClean:a===1E3};var g;
+(g=t)==null||g.postMessage(a)}};Promise.resolve().then(()=>p(d));return c}A(B,EventTarget);const C=document.currentScript,D=C==null?void 0:C.getAttribute("ws-interception-config");if(!D)throw Error("WebSocket Interceptor: Missing ws-interception-config attribute in the script tag.");const E=JSON.parse(D);if(!E.parentOrigin||typeof E.parentOrigin!=="string")throw Error("WebSocket Interceptor: Invalid parentOrigin in ws-interception-config");
+(function(b){var d=Object.getOwnPropertyDescriptor(window,"WebSocket");if(!d||d.writable||d.configurable)d=Object.assign(function(e,h){try{const k=(new URL(e)).hostname;if(b.proxiedDomains.some(m=>k===m||k.endsWith(`.${m}`)))return new B(e,h,b.parentOrigin)}catch(k){throw window.parent.postMessage({type:"websocket_blocked",url:e,reason:"blocked_invalid_url"},b.parentOrigin),new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");}window.parent.postMessage({type:"websocket_blocked",
+url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");},{CONNECTING:0,OPEN:1,CLOSING:2,CLOSED:3}),Object.defineProperty(window,"WebSocket",{value:d,writable:!1,configurable:!1})})({proxiedDomains:E.proxiedDomains||[],parentOrigin:E.parentOrigin});}).call(this);
+</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-3-flash-preview","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S AI OUL - KINETIC STEGANOGRAPHY</title>
+    <!-- 화면 다운로드를 위한 html-to-image 라이브러리 로드 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js" crossorigin="anonymous"></script>
+    <style>
+        /* CSS RESET & VARIABLES */
+        :root {
+            --color-void: #050505;
+            --color-paper: #F4F4F0;
+            --color-alert: #FF2A00;
+            --color-cyber-blue: #00E5FF;
+            --color-cyber-orange: #FF6600;
+            --color-cyber-dark: #050A0F;
+            --font-mono: 'Courier New', Courier, monospace;
+            --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --font-kr: 'Noto Sans KR', sans-serif;
+            --cursor-x: 50vw;
+            --cursor-y: 50vh;
+        }
+
+        body, html {
+            margin: 0; padding: 0; width: 100vw; height: 100vh;
+            overflow: hidden; 
+            background-color: var(--color-paper);
+            color: var(--color-void);
+            font-family: var(--font-sans);
+            transition: background-color 0.1s;
+        }
+
+        /* SVG 필터를 적용하기 위한 숨김 컨테이너 */
+        .svg-filters { position: absolute; width: 0; height: 0; pointer-events: none; }
+
+        /* =========================================
+           1. HUMAN OPTICS (유기적 훼손 / 물리적 왜곡)
+        ========================================= */
+        .human-chaos-container {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 100%; text-align: center; pointer-events: none;
+            /* SVG 왜곡 필터 적용 (녹아내리는 효과) */
+            filter: url(#distortion);
+            transition: filter 0.5s ease;
+        }
+
+        .mega-mass {
+            font-size: clamp(6rem, 25vw, 30rem);
+            font-weight: 900; line-height: 0.5; letter-spacing: -0.1em;
+            text-transform: uppercase; color: var(--color-void);
+            /* 상하로 길게 찢어버림 */
+            transform: scaleY(1.5);
+            mix-blend-mode: multiply;
+        }
+
+        .mega-mass .ai-mark { font-family: var(--font-mono); font-style: italic; }
+
+        /* 하드코어 글리치 슬라이스 애니메이션 */
+        .glitch-slice {
+            position: absolute; top: 50%; left: 50%; width: 100%;
+            transform: translate(-50%, -50%) scaleY(1.5);
+            font-size: clamp(6rem, 25vw, 30rem);
+            font-weight: 900; line-height: 0.5; letter-spacing: -0.1em;
+            color: var(--color-alert);
+            mix-blend-mode: difference;
+            pointer-events: none;
+            animation: hardcore-glitch 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes hardcore-glitch {
+            0% { clip-path: inset(20% 0 80% 0); transform: translate(-52%, -50%) scaleY(1.5); }
+            10% { clip-path: inset(60% 0 10% 0); transform: translate(-48%, -50%) scaleY(1.5); }
+            20% { clip-path: inset(40% 0 50% 0); transform: translate(-55%, -50%) scaleY(1.5); }
+            30% { clip-path: inset(80% 0 5% 0); transform: translate(-45%, -50%) scaleY(1.5); }
+            40% { clip-path: inset(10% 0 70% 0); transform: translate(-50%, -48%) scaleY(1.5); }
+            50% { clip-path: inset(30% 0 20% 0); transform: translate(-50%, -52%) scaleY(1.5); }
+            60% { clip-path: inset(70% 0 10% 0); transform: translate(-47%, -50%) scaleY(1.5); }
+            70% { clip-path: inset(5% 0 80% 0); transform: translate(-53%, -50%) scaleY(1.5); }
+            80% { clip-path: inset(50% 0 30% 0); transform: translate(-50%, -50%) scaleY(1.5); }
+            90% { clip-path: inset(90% 0 5% 0); transform: translate(-49%, -50%) scaleY(1.5); }
+            100% { clip-path: inset(15% 0 60% 0); transform: translate(-51%, -50%) scaleY(1.5); }
+        }
+
+        /* 한국어 데이터 잔해 */
+        .floating-kr {
+            position: absolute; font-family: var(--font-kr); font-weight: 900;
+            font-size: 2rem; letter-spacing: -0.2em; /* 뭉개버림 */
+            color: var(--color-void); opacity: 0.6;
+        }
+        .kr-1 { top: 10%; left: 5%; transform: skew(-20deg); }
+        .kr-2 { bottom: 10%; right: 5%; transform: scaleY(-1); }
+
+        /* =========================================
+           2. MACHINE VISION (정확한 기하학 / AI 스캐너)
+        ========================================= */
+        body.machine-vision {
+            background-color: var(--color-cyber-dark);
+            color: var(--color-cyber-blue);
+            cursor: crosshair; /* 마우스 커서 변경 */
+            /* 코드 느낌의 모눈종이 배경 추가 */
+            background-image: 
+                linear-gradient(rgba(0, 229, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 229, 255, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* 필터 해제 & 구조화 */
+        body.machine-vision .human-chaos-container { filter: none; }
+        body.machine-vision .glitch-slice { display: none; }
+        
+        /* 둥글고 부드러운 인간 시각 전용 텍스트 숨김 */
+        .human-only { display: block; }
+        .ai-only { display: none; }
+        
+        body.machine-vision .human-only { display: none; }
+        body.machine-vision .ai-only { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+
+        /* AI 모드 전용 - 극도로 날카롭고 기계적인 데이터 매트릭스 디자인 */
+        .ai-sharp-text {
+            font-family: var(--font-mono);
+            font-size: clamp(4rem, 15vw, 12rem);
+            font-weight: 100; /* 매우 얇고 날카로운 선 */
+            color: var(--color-cyber-blue);
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+            -webkit-font-smoothing: none; /* 안티앨리어싱을 꺼서 픽셀처럼 날카롭게 만듦 */
+            line-height: 1;
+            
+            /* 블러(흐림) 없는 솔리드 그림자 */
+            text-shadow: 4px 4px 0 var(--color-cyber-dark), 
+                         5px 5px 0 var(--color-cyber-orange);
+            
+            position: relative;
+            padding: 2rem;
+            border: 1px solid var(--color-cyber-blue);
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(0, 229, 255, 0.05),
+                rgba(0, 229, 255, 0.05) 2px,
+                transparent 2px,
+                transparent 4px
+            );
+            /* 모서리를 날카롭게 자르는 사이버펑크 컷아웃 */
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+        }
+
+        /* AI 데이터 바코드 */
+        .ai-barcode {
+            width: 100%;
+            height: 30px;
+            margin-top: 10px;
+            background: repeating-linear-gradient(
+                to right,
+                var(--color-cyber-blue),
+                var(--color-cyber-blue) 3px,
+                transparent 3px,
+                transparent 7px,
+                var(--color-cyber-orange) 7px,
+                var(--color-cyber-orange) 9px,
+                transparent 9px,
+                transparent 15px
+            );
+        }
+
+        .ai-metrics {
+            margin-top: 5px;
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            color: var(--color-cyber-orange);
+            -webkit-font-smoothing: none;
+            letter-spacing: 0.1em;
+            width: 100%;
+            text-align: right;
+            border-bottom: 1px dashed var(--color-cyber-blue);
+        }
+
+        /* 한국어 해독 정렬 (시스템 로그 스타일) */
+        body.machine-vision .floating-kr {
+            font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0;
+            color: var(--color-cyber-orange); transform: none; opacity: 0.8;
+        }
+        body.machine-vision .floating-kr::before {
+            content: "[SYS.LOG] ";
+            color: var(--color-cyber-blue);
+        }
+        body.machine-vision .kr-1 { top: 10%; left: 2%; }
+        body.machine-vision .kr-2 { bottom: auto; right: auto; top: 13%; left: 2%; }
+
+        /* 스테가노그래피 텍스트 출력 */
+        .steganography-data {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            font-family: var(--font-mono); font-size: 10px; color: transparent;
+            word-break: break-all; opacity: 0; pointer-events: none; z-index: 0;
+        }
+        body.machine-vision .steganography-data {
+            color: rgba(0, 229, 255, 0.15); /* 배경에 은은하게 깔리는 사이버 블루 코드 */
+            opacity: 1;
+        }
+
+        /* --- 마우스 인터랙티브 AI 스캐너 (핵심 차별점) --- */
+        .interactive-scanner {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; opacity: 0; z-index: 100;
+        }
+        body.machine-vision .interactive-scanner { opacity: 1; }
+
+        /* 마우스를 따라다니는 십자선 */
+        .scan-x { position: absolute; width: 100%; height: 1px; background: var(--color-alert); top: var(--cursor-y); }
+        .scan-y { position: absolute; height: 100%; width: 1px; background: var(--color-alert); left: var(--cursor-x); }
+        
+        body.machine-vision .scan-x { background: var(--color-cyber-blue); opacity: 0.7; }
+        body.machine-vision .scan-y { background: var(--color-cyber-blue); opacity: 0.7; }
+        
+        /* 마우스 타겟팅 박스 */
+        .scan-box {
+            position: absolute;
+            width: 150px; height: 150px;
+            border: 1px dashed var(--color-alert);
+            top: calc(var(--cursor-y) - 75px);
+            left: calc(var(--cursor-x) - 75px);
+            background: rgba(255, 42, 0, 0.05);
+            transition: width 0.2s, height 0.2s;
+        }
+        
+        body.machine-vision .scan-box {
+            border: 1px solid var(--color-cyber-orange);
+            background: rgba(255, 102, 0, 0.05);
+            box-shadow: inset 0 0 15px rgba(255, 102, 0, 0.1);
+        }
+
+        /* 스캔 박스 모서리 디자인 */
+        body.machine-vision .scan-box::before,
+        body.machine-vision .scan-box::after {
+            content: ''; position: absolute; width: 15px; height: 15px;
+            border: 2px solid var(--color-cyber-blue);
+        }
+        body.machine-vision .scan-box::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+        body.machine-vision .scan-box::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+
+        /* 실시간 좌표 출력 패널 */
+        .scan-coords {
+            position: absolute;
+            top: calc(var(--cursor-y) + 85px);
+            left: calc(var(--cursor-x) + 10px);
+            font-family: var(--font-mono);
+            font-size: 0.7rem; color: var(--color-paper);
+            background: var(--color-alert);
+            padding: 4px 8px;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px var(--color-alert);
+        }
+
+        body.machine-vision .scan-coords {
+            color: var(--color-cyber-blue);
+            background: var(--color-cyber-dark); /* 반투명 블러 제거, 솔리드 컬러 */
+            border: 1px solid var(--color-cyber-blue);
+            box-shadow: 4px 4px 0 var(--color-cyber-orange); /* 블러 없는 솔리드 그림자 */
+        }
+
+        /* UI 패널 (토글 및 다운로드 버튼) */
+        .ui-panel {
+            position: fixed; top: 2rem; right: 2rem;
+            display: flex; flex-direction: column; gap: 0.5rem;
+            z-index: 10000;
+        }
+
+        .action-btn {
+            background: var(--color-void); color: var(--color-paper);
+            border: 1px solid var(--color-void); padding: 0.8rem 1.5rem;
+            font-family: var(--font-mono); font-weight: 900; font-size: 0.8rem;
+            cursor: pointer; 
+            box-shadow: 4px 4px 0 var(--color-alert);
+            transition: all 0.1s;
+            text-align: left;
+        }
+        .action-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--color-alert); }
+        
+        body.machine-vision .action-btn {
+            background: var(--color-cyber-dark); color: var(--color-cyber-blue);
+            border: 1px solid var(--color-cyber-blue);
+            box-shadow: 4px 4px 0 var(--color-cyber-orange);
+        }
+
+    </style>
+</head>
+<body class="machine-vision">
+
+    <!-- 물리적 왜곡을 위한 SVG 필터 (핵심 그래픽 요소) -->
+    <svg class="svg-filters">
+        <filter id="distortion">
+            <!-- 주파수를 극단적으로 조절하여 거친 액체처럼 보이게 함 -->
+            <feTurbulence type="fractalNoise" baseFrequency="0.01 0.1" numOctaves="1" result="noise"></feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="50" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+        </filter>
+    </svg>
+
+    <div class="ui-panel" id="uiPanel">
+        <button class="action-btn" id="visionToggle" onclick="toggleVision()">[ REVERT TO HUMAN_OPTICS ]</button>
+        <button class="action-btn" onclick="downloadHTML()">[ DL : SOURCE.HTML ]</button>
+        <button class="action-btn" onclick="downloadPNG()">[ DL : RENDER.PNG ]</button>
+        <button class="action-btn" onclick="downloadSVG()">[ DL : VECTOR.SVG ]</button>
+    </div>
+
+    <!-- 배경 스테가노그래피 데이터 -->
+    <div class="steganography-data" id="hiddenData">0xDFC5EC_[ASACAH] 0x989F5D_[9DSH4O] 0x939CD2_[INR3GL] 0x553640_[C19RFF] 0x659180_[YEJTSZ] 0x315CBE_[B248JX] 0x4A1BE8_[GUNP2M] 0x8F554C_[N552PR] 0x32E24A_[CPZ2PB] 0xEDC760_[170OZ4] 0x7F17D2_[HHSXSP] 0x03BE00_[30JWKI] 0xEB87E2_[IAGCXN] 0xD04F4C_[VIMU1H] 0x28C21C_[YF1ML7] 0x305349_[LKSLHP] 0x4DC3A5_[0KI58F] 0x9EF68C_[CUFILK] 0xC92732_[7VOM81] 0x48A5E5_[TKN6D9] 0x50FAFD_[N45O5R] 0xDD4FE7_[XH7DDS] 0xE0CF6A_[08SN8Z] 0x687603_[L8NH9X] 0xEAD5D0_[XHYJN9] 0x29452F_[L4DIXU] 0x10BEF0_[BKKJRX] 0x1B8171_[99H7Y5] 0x0E0A17_[9PWAC1] 0xE477C4_[XA5O5Z] 0x7C655E_[E09DX4] 0x22DA93_[1RMC0Z] 0xAFC98D_[RI4VT9] 0x883F32_[OIZX4V] 0x026A97_[85BIRF] 0x9139A9_[3L1EV7] 0x581D40_[9I2M0J] 0x57456F_[2B34TE] 0x9A24E3_[G5Q25I] 0x41170A_[JP0RJQ] 0x6C66F5_[RLHQTZ] 0x23A10E_[R746VP] 0x095629_[VOLDAK] 0x884878_[0M5HIA] 0x929E8B_[C1ITU4] 0x91F45D_[4ZORUL] 0x3DF127_[AVPOFS] 0x55F6A7_[59KVWK] 0x156109_[4ANOEN] 0x9A0EFA_[IXT2T8] 0xBF695F_[T76SQF] 0x1CB530_[AS8OI3] 0x2FEDA7_[7XUF6P] 0x42A8AB_[HR5T30] 0x3F0D49_[TQSJ3A] 0x94DB1B_[63PD1K] 0x6E7CA9_[PJO270] 0xE7D8F9_[EYVFYE] 0x76117D_[95H4KX] 0x0F8A06_[DEGPW6] 0xC5C8B2_[5RWJUH] 0x4726D1_[P1T6OQ] 0x96FD79_[4D745V] 0x118B70_[7YMEWQ] 0x44F522_[GVU5KU] 0x96B28E_[NCAFK4] 0x17E811_[Y3RFJY] 0xC5E8F1_[F9U7P4] 0x38F18C_[HZO02L] 0xA7C5D4_[I72UTD] 0x4FA420_[ASVN52] 0x9342F8_[98XKUU] 0x46AF1E_[T1SA7U] 0x907AB1_[MIPFWQ] 0x8F375E_[N5CYKU] 0x11988F_[KR5GDK] 0xCBE6C9_[ZU9WUG] 0x45240D_[S10RM5] 0x287D8A_[ZKX6QK] 0x4EF0E0_[ZFQGIQ] 0xD50760_[B61QSJ] 0xFE4699_[N6F0HU] 0x1411B3_[RKO0KQ] 0x8B4B00_[JK821C] 0xC3085F_[BASZ0Q] 0xDDE127_[E7DEO3] 0x1122C9_[UHEJQO] 0x001054_[K618S8] 0x235CEF_[6C8ZT8] 0x925CBF_[4MD4Q6] 0x608B5D_[5R34IV] 0xBB9B8D_[APDL97] 0x0D145C_[XMI5MC] 0x8E78F0_[TFAO6T] 0x1B4354_[LKTAQ7] 0xBDD593_[EG5VNZ] 0x4C6620_[IK7V9D] 0x7396A7_[8M9HDA] 0x5C7E5C_[QZFM8V] 0xA2698E_[L51ZV5] 0xA393C5_[3RJF47] 0x1AD995_[Z287MQ] 0x7FFBD0_[OPBMPS] 0x573B65_[A0131I] 0xD46217_[HKZTCQ] 0x93B88D_[G1I29S] 0xB9174A_[4KCSL0] 0x099334_[9OTS7C] 0x4507B3_[VIPI27] 0xFEB982_[NPZCDU] 0xB5E22F_[8V9TFF] 0x4F8F7B_[24U446] 0x8A9C9D_[FYV3HR] 0x45D27F_[IGJ24H] 0xE184D1_[MPNIFT] 0x8855CA_[6VNH5O] 0x2D0854_[WF4WMK] 0x36F59A_[C5YZEJ] 0x179A17_[P3E23D] 0xE23917_[TBJ40W] 0x0D73C4_[89ATYZ] 0x0A9AA3_[IIWLGN] 0xB9D8F0_[6TH180] 0x6C241B_[9OWH1B] 0x10A228_[R9OZYA] 0xC458E9_[WZ1QCJ] 0x7FF477_[XVAVF0] 0xD57816_[7KNCDH] 0x200F2B_[DV70L5] 0x8786CC_[2337ZQ] 0x4DD484_[RPFHHQ] 0xB87B9D_[HWTJFY] 0x03B1A3_[0QNGUU] 0xECF7B3_[4BCK7E] 0x5962C3_[WCF0HR] 0xE2C521_[D8NXTW] 0x904DEB_[F8CPH1] 0xE46DAC_[VNNQY1] 0x0D141C_[SEJVF0] 0x9FE069_[78XEKY] 0x45AFAC_[YUABY8] 0xFB92A6_[JN7W2G] 0x0A8297_[7Y63YT] 0x69E171_[GHCIKE] 0x75C252_[R1ZJ1Y] 0x3CBD16_[FVU6ZL] 0xB94AFA_[5RJS3S] 0xE4C1CF_[S433MO] 0x4F8652_[MK8ZHU] 0x6D9905_[9UV27X] 0xCB37C1_[14ORL0] 0xCC64E2_[0SNKJA] 0x640765_[XF5HDB] 0xF56869_[17Z3OH] 0x52D220_[37A0V2] 0x5AC078_[6HEKQW] 0x30BD0E_[67GZP2] 0x70EB84_[ZGPMV1] 0x4A2C82_[6C1EI4] 0x79329C_[OT6QIO] 0x8BCDAE_[I678P1] 0x571C54_[3R4Q99] 0x7D6664_[6EFQ9Y] 0x3E3EEC_[HG1BQH] 0x859CA0_[I7FU62] 0xD9CEBB_[5FPBA5] 0x34B6C9_[IGHGMY] 0x8EEA4A_[RUW0EH] 0xB2B4D6_[NW37YQ] 0x41FDA2_[PJ0YC6] 0x06D4FA_[QN8A8R] 0x1D9418_[ZUIH03] 0xB3822D_[MPQNAZ] 0x42EC8A_[EQ1OU8] 0x1A6BE5_[6SSNXA] 0x815092_[3G88MS] 0x497F54_[YXRTXF] 0x0EFA8B_[WW5HOA] 0xC4B887_[PAHMBJ] 0x7772F8_[6HCDRG] 0xE46EF9_[HCDOXN] 0x74C249_[JMJX3T] 0xF7F349_[FD81V1] 0x05BB31_[VZUATR] 0x9D1F35_[C2XRN1] 0x0906E9_[IV50RH] 0xE52AD4_[YW08ON] 0xFCA28D_[BWJY54] 0xC2CE05_[3D8A9X] 0x1D3817_[ASRD7F] 0x2BD0A3_[9MV4WT] 0x70B4DB_[8N9LKM] 0x209E43_[A1DK0L] 0xE653EA_[03944R] 0x46B2F3_[4B6314] 0x3DE788_[51IFBB] 0xF4264E_[KDR2SO] 0x4C0693_[L9HTDF] 0x58CDBD_[DIFAB2] 0x3F9B9D_[SIIU45] 0x2E00A5_[6687Y2] 0xEF5B88_[G6EKJZ] 0xCE8FA8_[RGPR4K] 0x264018_[0JY7FT] 0xA4484D_[91F5WH] 0xEE0539_[LDVAQG] 0xE80ED3_[3PZLB5] 0x014E63_[87JIJC] 0x2EA6CA_[J445NB] 0x6A68B7_[X9VPZ0] 0xB23BE4_[OFVT55] 0x2E972E_[EIGZUB] 0xADAFC2_[8WKJDP] 0xA6D42F_[RPBPVW] 0x8E7230_[U51PTT] 0x619B21_[76JATU] 0xDBCE71_[6YYK4K] 0xA97177_[B3DNR2] 0x05D30A_[PJ5756] 0x1C6A0F_[5YKU8X] 0x3FC927_[PYDI9V] 0xD6902D_[UV0UB6] 0x0B094E_[HTZUYS] 0x3AE54E_[VXU5MX] 0x220DF2_[YJQ4RN] 0xEFDD46_[BYODGC] 0xF96CB8_[S2CRFU] 0xFFD99B_[C2CTHJ] 0x69B75D_[6EG568] 0x80495B_[EZGFIP] 0x223521_[9VDESS] 0x3BF14C_[GNKDWH] 0x8946AA_[SBXW4B] 0xF718A0_[0N420L] 0xB04AC9_[YCMGVJ] 0xC5DD54_[Q37315] 0x2C3A10_[3PV9GK] 0xAED834_[11T6R3] 0x09A518_[79HIDV] 0x99DD52_[BITMX9] 0xC2B707_[JZHID6] 0xF36DA0_[C9SQ2S] 0xCCCE44_[CUVOFM] 0x7517E6_[0PUMLZ] 0x58B388_[DWRBC3] 0x9A9658_[AB5NBD] 0x6ADB7B_[R4R5OB] 0x34FC36_[EFJFNX] 0xDE9490_[21OM2P] 0x50D43F_[3VV8AZ] 0x9B6941_[S6KQ4K] 0xDD7FC7_[ZDYQ74] 0x7CA61C_[5FXM9W] 0x73E919_[AY25LN] 0xA04324_[6VYSJ9] 0x7A4283_[P1UIKP] 0xE01A82_[JC4T5K] 0x079891_[YWSEKR] 0xF6A38C_[QX5M3E] 0x3D7D80_[0IF80Z] 0x3B0EB8_[G836TQ] 0x4BF95F_[UD735O] 0xC9E36D_[NLQJML] 0xD630A1_[IMQEAX] 0x7E9025_[PBMCL5] 0xAB47BC_[5OCD4P] 0x7FA1D3_[UNBV9L] 0x39A1E8_[EQJ4VW] 0xEE7554_[J6MBAR] 0x614AC4_[B7WH3P] 0xCBCDF6_[7SFWRY] 0x4340F4_[BF6YLN] 0x9875DA_[70I39Q] 0x5A3D1F_[Q7TDPT] 0x93387C_[UZZTON] 0x149B50_[PY0QZP] 0x738EC3_[ZPHAZ7] 0xFFD0DE_[4BLLF7] 0x531D14_[6VOR2O] 0xA201F9_[PPTY09] 0xA678DE_[025SD9] 0xC8248A_[W9AQA1] 0x04B8F9_[2BPE61] 0x7E9DC2_[RDUARU] 0x6878E2_[ZK6G09] 0xDDAB20_[YFYNAY] 0xD2A7C8_[K372SZ] 0x8EAED6_[2SEGYO] 0xB9FA71_[AJSSLZ] 0x3A61E1_[KP595Z] 0x9536E7_[LEWQZ7] 0x482296_[FK45ZK] 0xE84DA1_[6DLTYW] 0x16B93A_[1SPDEJ] 0xB9EFD1_[5HXK7N] 0xE95BC3_[D1BP1N] 0x2ACAB8_[CMI023] 0xE44F4A_[CLOJCA] 0x62C5AF_[0U9Z9D] 0xF79AB8_[AYDPE5] 0x5185FB_[B7Z860] 0x234AF2_[MHK6UB] 0xF1775E_[94OCGY] 0x385409_[S7VOPA] 0x1D6F58_[EM0QGP] 0x8C4A52_[2SF2KM] 0x2F36A7_[VWVTX9] 0x20740A_[DJCMEA] 0x7FE636_[Q490VC] 0x3CA2C1_[BZPCHT] 0xECCD36_[Y1VLVF] 0xD94979_[FZFT8N] 0x75EAD7_[YUQO3P] 0xE7E182_[DNT3SF] 0x816641_[9ZM61G] 0xE198AA_[ZHY42Z] 0xD3968B_[4JAUNN] 0x03138F_[BLZEAG] 0xF6D42E_[NXMYU2] 0xF21353_[CSW130] 0x2A6E0B_[6CZQY7] 0x5F82A8_[SL9TJR] 0xE4ABA2_[M4DWJH] 0x56EE46_[YPD8ZL] 0x3D0306_[3Q3W5W] 0x1B770B_[T1WY3R] 0x6D52B4_[60VFP8] 0xD46891_[6AK8OB] 0xE0CF8E_[667IWY] 0xBF2268_[HOF4AD] 0xD600D0_[ULM9RL] 0x6CC382_[AS4ZT4] 0x8398A9_[HOU0F5] 0x8FF6DC_[119CND] 0x9B6F23_[RYUIOH] 0x3F5EC5_[HY428G] 0x6BE5D9_[5EGOKY] 0x016980_[RSO14D] 0xEDA531_[ER3HGW] 0x86EF29_[5VAD1X] 0x1EE912_[YWJVXV] 0x38AD53_[479W8Y] 0x0E0F6F_[RG0NWA] 0xE9E7F7_[FR1H6E] 0x4244A4_[59NBCJ] 0x0E6812_[7WKFF9] 0x845442_[AU2QL1] 0xF0F756_[VMTKH5] 0x00E22D_[TVRR56] 0x0AE113_[R9OCGP] 0x0B552B_[XJ3DXF] 0x2E18E7_[O420JN] 0xF93E4C_[KTWIKF] 0x0CB271_[9566EI] 0xC8DF73_[CQ9KEU] 0x64421D_[AR3X4I] 0xDC68AE_[YE8EFD] 0xE10758_[7NZ6N5] 0xC32D63_[YS1O1B] 0xA755F6_[7747UU] 0xBDC3EB_[JPBXUJ] 0xF52B4E_[0EYMZ7] 0xD9FE4D_[LT2DI8] 0xDDC969_[I7QQYS] 0xD6076A_[LD0N8A] 0xB7DB03_[0N9AM9] 0xA80E96_[5B6IR3] 0xA7BB73_[QCVINJ] 0x04FE46_[JDYNS5] 0x803CA3_[7NMPG3] 0xCAA2EF_[K1GXES] 0x056BD9_[ZXASCG] 0xA87266_[O8V0ON] 0xE8F891_[DBPLMP] 0x187F85_[2QL8NJ] 0x7A5A12_[LMH3JY] 0xF583A1_[OS6T6W] 0x20E095_[8P1W16] 0x0B6255_[LVWTIV] 0x46D598_[4VQODQ] 0x0483DC_[BPE4UR] 0xC69FEA_[KGXF9P] 0x40CC0A_[5G24AJ] 0xC5544F_[41VTCE] 0x7A3D66_[1N957D] 0xAC2B15_[WNTNHP] 0x422149_[W9XSY5] 0x6260EA_[B3NYDQ] 0x4D3444_[IOH1GS] 0x6190EF_[IEUCMJ] 0xEC074D_[L4F6GW] 0x27CE4A_[SILCFX] 0x84B8CD_[2Y47UF] 0x9086AF_[QEWEB3] 0x2E7EAD_[3YVX8S] 0xF9CA65_[OQ3I4A] 0xE0B17E_[2Q2FF2] 0xA400D8_[RGOYPU] 0xC60CD0_[S2BP6G] 0x6D39DA_[99PIAT] </div>
+
+    <!-- 인터랙티브 AI 타겟팅 스캐너 (마우스 추적) -->
+    <div class="interactive-scanner">
+        <div class="scan-x"></div>
+        <div class="scan-y"></div>
+        <div class="scan-box"></div>
+        <div class="scan-coords" id="coordsData">
+                <span style="color: var(--color-cyber-orange)">[TARGET LOCKED]</span><br>
+                POS : X_0943 Y_0100<br>
+                VAL : 0xA69 (4ms)<br>
+                STS : DECODING_DATA...
+            </div>
+    </div>
+
+    <div class="human-chaos-container">
+        <!-- 찢어진 한국어 파편 -->
+        <div class="floating-kr kr-1">서_울/그.리.드.오.류</div>
+        <div class="floating-kr kr-2">충돌__중첩__데이터모싱</div>
+
+        <!-- 메인 타이포그래피 (인간 시각 - 녹아내리는 원본) -->
+        <div class="mega-mass human-only">
+            S<span class="ai-mark">AI</span>OUL<br>
+            S<span class="ai-mark">AI</span>OUL
+        </div>
+
+        <!-- 메인 타이포그래피 (기계 시각 - 날카로운 코드 배열) -->
+        <div class="ai-mass ai-only">
+            <div class="ai-metrics">SYS.CORE.OVERRIDE // 0x88FF21</div>
+            <div class="ai-sharp-text">
+                [S_AI_OUL]
+            </div>
+            <div class="ai-barcode"></div>
+        </div>
+    </div>
+
+    <!-- 순식간에 잘려나가는 붉은색 글리치 레이어 -->
+    <div class="glitch-slice human-only">
+        S<span class="ai-mark">AI</span>OUL<br>
+        S<span class="ai-mark">AI</span>OUL
+    </div>
+
+    <script>
+        // 스테가노그래피 데이터 생성 (코드/메모리 주소 스타일로 변경)
+        const hiddenDataEl = document.getElementById('hiddenData');
+        let fullData = "";
+        for(let i=0; i<400; i++) {
+            const addr = "0x" + Math.floor(Math.random()*0xFFFFFF).toString(16).toUpperCase().padStart(6, '0');
+            const val = Math.random().toString(36).substring(2, 8).toUpperCase();
+            fullData += `${addr}_[${val}] `;
+        }
+        hiddenDataEl.innerText = fullData;
+
+        // 마우스 트래킹 로직 (기계 시각의 핵심)
+        const coordsData = document.getElementById('coordsData');
+        document.addEventListener('mousemove', (e) => {
+            if(!document.body.classList.contains('machine-vision')) return;
+            
+            // CSS 변수 업데이트하여 십자선과 박스 이동
+            document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
+            document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
+            
+            // 실시간 좌표 및 가짜 해독 데이터 출력 (터미널 스타일)
+            const x = String(e.clientX).padStart(4, '0');
+            const y = String(e.clientY).padStart(4, '0');
+            const randomHex = Math.floor(Math.random()*0xFFF).toString(16).toUpperCase().padStart(3, '0');
+            const latency = Math.floor(Math.random() * 15 + 1);
+            
+            coordsData.innerHTML = `
+                <span style="color: var(--color-cyber-orange)">[TARGET LOCKED]</span><br>
+                POS : X_${x} Y_${y}<br>
+                VAL : 0x${randomHex} (${latency}ms)<br>
+                STS : DECODING_DATA...
+            `;
+        });
+
+        // 토글 버튼
+        function toggleVision() {
+            const btn = document.getElementById('visionToggle');
+            const body = document.body;
+
+            if (body.classList.contains('machine-vision')) {
+                body.classList.remove('machine-vision');
+                btn.innerText = "[ INITIATE: MACHINE_VISION ]";
+            } else {
+                body.classList.add('machine-vision');
+                btn.innerText = "[ REVERT TO HUMAN_OPTICS ]";
+                
+                // 켤 때 화면 가운데로 커서 초기화
+                document.documentElement.style.setProperty('--cursor-x', window.innerWidth/2 + 'px');
+                document.documentElement.style.setProperty('--cursor-y', window.innerHeight/2 + 'px');
+            }
+        }
+
+        // 다운로드 로직: HTML
+        function downloadHTML() {
+            const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: "text/html" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "SAIOUL_KINETIC.html";
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // 다운로드 로직: PNG
+        function downloadPNG() {
+            const ui = document.getElementById('uiPanel');
+            ui.style.display = 'none'; // 캡처 시 UI 숨김
+            
+            htmlToImage.toPng(document.body, { quality: 1.0, pixelRatio: 2 })
+                .then(function (dataUrl) {
+                    const a = document.createElement('a');
+                    a.href = dataUrl;
+                    a.download = "SAIOUL_VISION.png";
+                    a.click();
+                    ui.style.display = 'flex'; // UI 복구
+                })
+                .catch(function (error) {
+                    console.error('PNG 저장 실패:', error);
+                    ui.style.display = 'flex';
+                });
+        }
+
+        // 다운로드 로직: SVG
+        function downloadSVG() {
+            const ui = document.getElementById('uiPanel');
+            ui.style.display = 'none'; // 캡처 시 UI 숨김
+            
+            htmlToImage.toSvg(document.body)
+                .then(function (dataUrl) {
+                    const a = document.createElement('a');
+                    a.href = dataUrl;
+                    a.download = "SAIOUL_VISION.svg";
+                    a.click();
+                    ui.style.display = 'flex'; // UI 복구
+                })
+                .catch(function (error) {
+                    console.error('SVG 저장 실패:', error);
+                    ui.style.display = 'flex';
+                });
+        }
+    </script>
+
+</body></html>

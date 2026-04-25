@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Shaking Sanctuary — Detail</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    /* Cargo Detail Brutalist Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f4f4f0;
+      --black: #050505;
+      --accent: #ff2a00;
+      --mono: 'Courier New', Courier, monospace;
+      --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --serif: 'Times New Roman', Times, serif;
+    }
+    body { background: var(--bg); color: var(--black); font-family: var(--sans); display: flex; overflow-x: hidden; }
+    
+    /* Left Panel: Fixed Metadata */
+    .detail-aside {
+      position: fixed; top: 0; left: 0; width: 35vw; height: 100vh;
+      border-right: 1px solid var(--black);
+      padding: 3rem 2rem; display: flex; flex-direction: column; justify-content: space-between;
+      background: var(--bg); z-index: 10;
+    }
+    .detail-close {
+      text-decoration: none; color: var(--black); font-weight: 900; font-size: 2rem;
+      align-self: flex-start; margin-bottom: 2rem; display: inline-block;
+      transition: color 0.2s; text-transform: uppercase;
+    }
+    .detail-close:hover { color: var(--accent); }
+    
+    .detail-title {
+      font-size: clamp(3rem, 6vw, 7rem); font-weight: 900; letter-spacing: -0.05em; text-transform: uppercase;
+      line-height: 0.9; margin-bottom: 2rem; word-break: break-all;
+    }
+    
+    .meta-list { list-style: none; border-top: 1px solid var(--black); margin-bottom: 2rem; }
+    .meta-list li {
+      display: flex; justify-content: space-between; padding: 1.2rem 0; border-bottom: 1px solid var(--black);
+      font-family: var(--mono); font-size: 0.85rem; text-transform: uppercase;
+    }
+    .meta-label { font-weight: 700; }
+    
+    .detail-desc {
+      font-family: var(--serif); font-size: 1.15rem; line-height: 1.6; padding-right: 1rem;
+    }
+
+    /* Right Panel: Scrollable Media */
+    .detail-main {
+      margin-left: 35vw; width: 65vw; min-height: 100vh; background: var(--black);
+    }
+    
+    /* Image Stack */
+    .media-img {
+      width: 100%; display: block; border-bottom: 1px solid var(--black);
+      filter: grayscale(20%); transition: filter 0.4s;
+    }
+    .media-img:hover { filter: grayscale(0%); }
+
+    /* Mobile Responsive */
+    @media (max-width: 800px) {
+      body { flex-direction: column; }
+      .detail-aside {
+        position: static; width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--black);
+      }
+      .detail-main { margin-left: 0; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="detail-aside">
+    <div>
+      <a href="index.html#works" class="detail-close">← BACK</a>
+      <h1 class="detail-title">Shaking Sanctuary</h1>
+      
+      <ul class="meta-list">
+        <li><span class="meta-label">Category</span><span>Installation</span></li>
+        <li><span class="meta-label">Context</span><span>Dubai Design Week</span></li>
+        <li><span class="meta-label">Year</span><span>2023</span></li>
+      </ul>
+      
+      <p class="detail-desc">
+        두바이 디자인 위크 실외 인스톨레이션. 사막 식물에서 영감받은 하얀 수련형 조형물 군집이 도시 속 피난처를 만들어내는 공간적 경험을 탐구. 관람자가 만들어내는 그림자와 빛의 산란이 척박한 도시 환경 속에서 유연하고 일시적인 안식처(Sanctuary)를 제공합니다.
+      </p>
+    </div>
+  </aside>
+
+  <main class="detail-main">
+    <img src="assets/work_dubai.jpg" alt="Main Artwork" class="media-img">
+    <img src="assets/work_dubai_2.jpg" alt="Detail 1" class="media-img">
+    <img src="assets/work_dubai_3.jpg" alt="Detail 2" class="media-img">
+  </main>
+
+</body>
+</html>
