@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Hass Project — Detail</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    /* Cargo Detail Brutalist Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f4f4f0;
+      --black: #050505;
+      --accent: #ff2a00;
+      --mono: 'Courier New', Courier, monospace;
+      --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --serif: 'Times New Roman', Times, serif;
+    }
+    body { background: var(--bg); color: var(--black); font-family: var(--sans); display: flex; overflow-x: hidden; }
+    
+    /* Left Panel: Fixed Metadata */
+    .detail-aside {
+      position: fixed; top: 0; left: 0; width: 35vw; height: 100vh;
+      border-right: 1px solid var(--black);
+      padding: 3rem 2rem; display: flex; flex-direction: column; justify-content: space-between;
+      background: var(--bg); z-index: 10;
+    }
+    .detail-close {
+      text-decoration: none; color: var(--black); font-weight: 900; font-size: 2rem;
+      align-self: flex-start; margin-bottom: 2rem; display: inline-block;
+      transition: color 0.2s; text-transform: uppercase;
+    }
+    .detail-close:hover { color: var(--accent); }
+    
+    .detail-title {
+      font-size: clamp(3rem, 5vw, 6rem); font-weight: 900; letter-spacing: -0.05em; text-transform: uppercase;
+      line-height: 0.9; margin-bottom: 2rem; word-break: keep-all;
+    }
+    
+    .meta-list { list-style: none; border-top: 1px solid var(--black); margin-bottom: 2rem; }
+    .meta-list li {
+      display: flex; justify-content: space-between; padding: 1.2rem 0; border-bottom: 1px solid var(--black);
+      font-family: var(--mono); font-size: 0.85rem; text-transform: uppercase;
+    }
+    .meta-label { font-weight: 700; }
+    
+    .detail-desc {
+      font-family: var(--serif); font-size: 1.15rem; line-height: 1.6; padding-right: 1rem;
+    }
+
+    /* Right Panel: Scrollable Media */
+    .detail-main {
+      margin-left: 35vw; width: 65vw; min-height: 100vh; background: var(--black);
+    }
+    
+    /* Image Stack */
+    .media-img {
+      width: 100%; display: block; border-bottom: 1px solid var(--black);
+      filter: grayscale(20%); transition: filter 0.4s;
+    }
+    .media-img:hover { filter: grayscale(0%); }
+
+    /* Mobile Responsive */
+    @media (max-width: 800px) {
+      body { flex-direction: column; }
+      .detail-aside {
+        position: static; width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--black);
+      }
+      .detail-main { margin-left: 0; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="detail-aside">
+    <div>
+      <a href="index.html#works" class="detail-close">← BACK</a>
+      <h1 class="detail-title">Hass<br>Project</h1>
+      
+      <ul class="meta-list">
+        <li><span class="meta-label">Event</span><span style="text-align:right">Sustainable Art 2023</span></li>
+        <li><span class="meta-label">Host</span><span style="text-align:right">갤러리어스 (Gallery Earth)</span></li>
+        <li><span class="meta-label">Award</span><span style="text-align:right; color:var(--accent);">Selected Artist</span></li>
+      </ul>
+      
+      <div class="detail-desc" style="font-family:'Noto Serif KR', serif; font-size: 0.95rem; line-height: 1.8;">
+        <p style="margin-bottom:1rem;"><strong>“오 마이… 서스테이너블 아트” 전시작가 공모전 선정작</strong><br>갤러리어스는 예술이 아름다움과 지속가능성을 동시에 느낄 수 있는 순간의 미학이라 믿습니다. 아름다움(美), 지속가능성(持續可能性) 그리고 우리(Us)와 지구(Earth) 모두가 하나 되는 지속 가능한 미학을 탐구합니다.</p>
+        <p style="margin-bottom:1rem;"><strong>■ 공모 주제</strong><br>- Easy & Friendly But Insanely Great<br>- 다정하지만 미치도록 위대한</p>
+        <p style="margin-bottom:2rem;">오직 다정한 상상력만이 비로소 우리를 하나가 되게 합니다. 지속 가능한 예술의 가치와 형태적 실험을 결합한 작품입니다.</p>
+      </div>
+    </div>
+  </aside>
+
+  <main class="detail-main">
+    <img src="assets/hass/00.jpg" alt="Hass Project Main" class="media-img">
+    <img src="assets/hass/IMG_1571.PNG" alt="Hass Project Detail 1" class="media-img">
+    <img src="assets/hass/IMG_2903.PNG" alt="Hass Project Detail 2" class="media-img">
+  </main>
+
+</body>
+</html>
