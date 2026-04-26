@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Seoul Forum 2026 — Detail</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    /* Cargo Detail Brutalist Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f4f4f0;
+      --black: #050505;
+      --accent: #ff2a00;
+      --mono: 'Courier New', Courier, monospace;
+      --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --serif: 'Times New Roman', Times, serif;
+    }
+    body { background: var(--bg); color: var(--black); font-family: var(--sans); display: flex; overflow-x: hidden; }
+    
+    /* Left Panel: Fixed Metadata */
+    .detail-aside {
+      position: fixed; top: 0; left: 0; width: 35vw; height: 100vh;
+      border-right: 1px solid var(--black);
+      padding: 3rem 2rem; display: flex; flex-direction: column; justify-content: space-between;
+      background: var(--bg); z-index: 10;
+    }
+    .detail-close {
+      text-decoration: none; color: var(--black); font-weight: 900; font-size: 2rem;
+      align-self: flex-start; margin-bottom: 2rem; display: inline-block;
+      transition: color 0.2s; text-transform: uppercase;
+    }
+    .detail-close:hover { color: var(--accent); }
+    
+    .detail-title {
+      font-size: clamp(3rem, 5vw, 6rem); font-weight: 900; letter-spacing: -0.05em; text-transform: uppercase;
+      line-height: 0.9; margin-bottom: 2rem; word-break: keep-all;
+    }
+    
+    .meta-list { list-style: none; border-top: 1px solid var(--black); margin-bottom: 2rem; }
+    .meta-list li {
+      display: flex; justify-content: space-between; padding: 1.2rem 0; border-bottom: 1px solid var(--black);
+      font-family: var(--mono); font-size: 0.85rem; text-transform: uppercase;
+    }
+    .meta-label { font-weight: 700; }
+    
+    .detail-desc {
+      font-family: var(--serif); font-size: 1.15rem; line-height: 1.6; padding-right: 1rem;
+    }
+
+    /* Right Panel: Scrollable Media */
+    .detail-main {
+      margin-left: 35vw; width: 65vw; min-height: 100vh; background: var(--black);
+    }
+    
+    /* Image Stack */
+    .media-img {
+      width: 100%; display: block; border-bottom: 1px solid var(--black);
+      filter: grayscale(20%); transition: filter 0.4s;
+    }
+    .media-img:hover { filter: grayscale(0%); }
+
+    /* Mobile Responsive */
+    @media (max-width: 800px) {
+      body { flex-direction: column; }
+      .detail-aside {
+        position: static; width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--black);
+      }
+      .detail-main { margin-left: 0; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <aside class="detail-aside">
+    <div>
+      <a href="index.html#works" class="detail-close">← BACK</a>
+      <h1 class="detail-title">서울포럼<br>2026</h1>
+      
+      <ul class="meta-list">
+        <li><span class="meta-label">Role</span><span style="text-align:right">Key Visual Design</span></li>
+        <li><span class="meta-label">Client</span><span style="text-align:right">서울경제</span></li>
+        <li><span class="meta-label">Award</span><span style="text-align:right; color:var(--accent);">대상 (Grand Prize)</span></li>
+      </ul>
+      
+      <div class="detail-desc" style="font-family:'Noto Serif KR', serif; font-size: 0.95rem; line-height: 1.8;">
+        <p style="margin-bottom:1rem;">미래 산업의 새로운 중심 동력과 그 확산 구조를 표현한 <strong>서울포럼 2026 키비주얼 디자인</strong>입니다. 기존 서울포럼 키비주얼의 블루 기반 기술 이미지를 일정 부분 계승하면서 보다 구조적이고 확장된 그래픽 언어로 발전시키고자 했습니다.</p>
+        <p style="margin-bottom:1rem;">중심 광점과 곡선 흐름, 파동형 라인 구조를 통해 기술 데이터 산업 담론이 연결되고 확산되는 구조를 시각화했습니다. 특히 화면 좌측의 곡선 구조는 산업의 역동적 흐름과 함께 <strong>서울경제와 서울포럼의 이니셜 'S'</strong>를 상징적으로 반영한 그래픽 요소로 작동합니다.</p>
+        <p style="margin-bottom:2rem;">이 디자인은 포스터, 무대 백월, 디지털 배너, 홍보물 등 다양한 매체와 비율에 유연하게 적용 가능한 <strong>확장형 키비주얼 시스템</strong>으로 설계되었습니다.</p>
+      </div>
+    </div>
+  </aside>
+
+  <main class="detail-main">
+    <img src="assets/seoulforum/00.jpg" alt="Seoul Forum Key Visual 2026" class="media-img">
+  </main>
+
+</body>
+</html>
