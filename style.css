@@ -74,16 +74,17 @@ h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.03em; }
 .filter-btn.active { background: var(--white); color: var(--bg); border-color: var(--white); font-weight: 700; }
 
 /* ── Works Grid (Editorial / Small Thumbnails) ── */
-.works-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4rem 2rem; background: transparent; padding: 0 max(2rem, 4vw) 5rem; max-width: 1400px; margin: 0 auto; border: none; }
+.works-grid { column-count: 5; column-gap: 2rem; background: transparent; padding: 0 max(2rem, 4vw) 5rem; max-width: 1400px; margin: 0 auto; border: none; display: block; }
 .work-card {
   position: relative; cursor: pointer; background: transparent;
   display: flex; flex-direction: column; gap: 1rem; align-items: flex-start;
+  break-inside: avoid; margin-bottom: 4rem; width: 100%;
 }
-.work-card.large { grid-column: span 1; }
-.work-card.hidden { display: none; }
+.work-card.large { }
+.work-card.hidden { display: none !important; }
 
-.card-visual { width: 100%; position: relative; overflow: hidden; aspect-ratio: 4/3; border-radius: 4px; }
-.card-visual img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) brightness(0.9); transition: filter 0.6s var(--ease-fluid), transform 0.8s var(--ease-fluid); }
+.card-visual { width: 100%; position: relative; overflow: hidden; border-radius: 4px; }
+.card-visual img { width: 100%; height: auto !important; aspect-ratio: auto; display: block; object-fit: cover; filter: grayscale(100%) brightness(0.9); transition: filter 0.6s var(--ease-fluid), transform 0.8s var(--ease-fluid); }
 .work-card:hover .card-visual img { filter: grayscale(0%) brightness(1); transform: scale(1.02); }
 
 .card-info {
@@ -124,14 +125,14 @@ h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.03em; }
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
-  .works-grid { grid-template-columns: repeat(3, 1fr); gap: 3rem 1.5rem; }
+  .works-grid { column-count: 3; column-gap: 1.5rem; }
 }
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
-  .works-grid { grid-template-columns: repeat(2, 1fr); border: none; padding: 0 max(2rem, 4vw); gap: 2rem 1rem; }
-  .work-card { border: none; }
-  .work-card.large { grid-column: span 1; }
+  .works-grid { column-count: 2; column-gap: 1rem; border: none; padding: 0 max(2rem, 4vw); display: block; }
+  .work-card { border: none; margin-bottom: 3rem; }
+  .work-card.large { }
   .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
   .contact-section { clip-path: polygon(0 2%, 100% 0, 100% 100%, 0 100%); padding: 6rem 1.5rem; }
 }
