@@ -576,14 +576,14 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;700&display=swap');
 
         :root {
-            /* Human Mode: Inky Grey & Sharp Black */
-            --bg-human: #D1D5D9; 
-            --text-human: #0F1115;
-            --accent-human: #000000;
+            /* Human Mode: Inky Grey & Sharp Black -> Black & White */
+            --bg-human: #050505; 
+            --text-human: #FFFFFF;
+            --accent-human: #FFFFFF;
 
-            /* AI Mode: Obsidian Black & Toxic Lime */
-            --bg-ai: #030405;
-            --text-ai: #D1FF00; 
+            /* AI Mode: Obsidian Black & Toxic Lime -> Black & White */
+            --bg-ai: #050505;
+            --text-ai: #FFFFFF; 
             --accent-ai: #FFFFFF;
             
             --font-mono: 'JetBrains Mono', monospace;
@@ -613,7 +613,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             pointer-events: none; z-index: 9999;
             transition: border-color 0.8s;
         }
-        body.machine-vision .ui-frame { border-color: rgba(209, 255, 0, 0.05); }
+        body.machine-vision .ui-frame { border-color: rgba(255, 255, 255, 0.05); }
 
         .ui-header {
             position: fixed; top: 3rem; left: 3rem; right: 3rem;
@@ -667,10 +667,10 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         }
 
         .main-typo {
-            font-size: clamp(4rem, 20vw, 28rem);
-            font-weight: 900; line-height: 0.75; letter-spacing: -0.08em;
+            font-size: clamp(3rem, 15vw, 22rem);
+            font-weight: 900; line-height: 0.8; letter-spacing: -0.05em;
             text-transform: uppercase; color: var(--text-human);
-            transform: scaleY(1.8); mix-blend-mode: multiply;
+            transform: scaleY(1.2); mix-blend-mode: normal;
             z-index: 10; position: relative; text-align: center;
         }
         
@@ -690,8 +690,8 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         /* AI VISION 변환 */
         body.machine-vision .canvas-area { filter: none; }
         body.machine-vision .main-typo {
-            color: transparent; -webkit-text-stroke: 1px rgba(209, 255, 0, 0.2);
-            transform: scaleY(1.2); mix-blend-mode: normal;
+            color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            transform: scaleY(1); mix-blend-mode: normal;
         }
         body.machine-vision .main-typo span.ai {
             color: var(--text-ai);
@@ -701,8 +701,8 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         
         body.machine-vision .micro-data {
             font-size: 0.85rem; opacity: 1; color: var(--text-ai);
-            background: rgba(209, 255, 0, 0.03);
-            border-bottom: 1px solid rgba(209, 255, 0, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
             padding: 8px 0; left: 5rem !important; width: 320px;
             transform: none !important; z-index: 20;
         }
@@ -727,8 +727,8 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
             width: 220px; height: 110px; top: var(--cursor-y); left: var(--cursor-x);
             transform: translate(30px, 30px); pointer-events: none; opacity: 0;
             transition: opacity 0.3s; padding: 12px; font-family: var(--font-mono); font-size: 0.6rem;
-            /* 검은색 배경 제거하고 투명하게, 옅은 라임색 틴트만 살짝 추가 */
-            background: rgba(209, 255, 0, 0.02); 
+            /* 검은색 배경 제거하고 투명하게, 옅은 흰색 틴트만 살짝 추가 */
+            background: rgba(255, 255, 255, 0.05); 
             backdrop-filter: none;
         }
         body.machine-vision .hud-scan { opacity: 1; }
