@@ -205,7 +205,16 @@
         <div class="card-info"><span class="card-cat">Media & AI · ARKO Metaverse</span><h3 class="card-title">DreamUs <span style="font-size:0.6em; background:var(--accent); color:var(--bg); padding:0.1rem 0.3rem;">SELECTED</span></h3><span class="card-year">2024</span></div>
       </article>
       <article class="work-card large" data-category="media" data-title="S_AI_OUL" data-year="2026" data-desc-ko="타이포그래피와 인터랙티브 미디어를 결합하여 서울의 역동성과 정체성을 탐구한 디자인 작업. 'SEOUL'과 'AI'를 교차시킨 시각 언어를 통해 다이내믹한 조형을 제안합니다." data-desc-en="A design piece exploring the dynamism and identity of Seoul through the intersection of typography and interactive media, combining 'SEOUL' and 'AI'." data-link="project_saioul.html">
-        <div class="card-visual" style="background:#0a0a0a;overflow:hidden;position:relative"><img src="assets/saioul/SAIOUL_Artwork.png" alt="S_AI_OUL Thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/></div>
+        <style>
+          @keyframes thumbnailFade { 0%, 25% { opacity: 1; } 33.33%, 91.66% { opacity: 0; } 100% { opacity: 1; } }
+          .crossfade-img { width: 100%; height: 100%; object-fit: cover; animation: thumbnailFade 9s infinite; transition: transform .5s cubic-bezier(.4,0,.2,1); }
+          .crossfade-wrapper:hover .crossfade-img { transform: scale(1.04); }
+        </style>
+        <div class="card-visual crossfade-wrapper" style="background:#0a0a0a;overflow:hidden;position:relative;">
+          <img src="assets/saioul/00-1.jpg" alt="S_AI_OUL Thumbnail 1" class="crossfade-img" style="display:block; animation-delay: 0s;">
+          <img src="assets/saioul/00-2.jpg" alt="S_AI_OUL Thumbnail 2" class="crossfade-img" style="position:absolute; top:0; left:0; animation-delay: 3s;">
+          <img src="assets/saioul/00-3.jpg" alt="S_AI_OUL Thumbnail 3" class="crossfade-img" style="position:absolute; top:0; left:0; animation-delay: 6s;">
+        </div>
         <div class="card-info"><span class="card-cat">Media & AI · Slanted Magazine #48</span><h3 class="card-title">S_AI_OUL</h3><span class="card-year">2026</span></div>
       </article>
 
