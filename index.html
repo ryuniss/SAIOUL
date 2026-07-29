@@ -3,59 +3,39 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>SAIOUL — AI-Driven Spatial Designer</title>
-  <meta name="description" content="디자이너이자 교육자. 건축, 조각, 공간, 가구, 오브제를 아우르는 포트폴리오."/>
+  <title>Jungryun Kwon — Spatial & Public Installation Designer</title>
+  <meta name="description" content="권정륜(Jungryun Kwon) Portfolio — 코엑스 별마당도서관 대상 수상작 '사유의 지층', 공간 설치, 아키텍처, 가구 및 미디어 아트 포트폴리오."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;700&family=Noto+Sans+KR:wght@300;700;900&family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;700&family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@300;400&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
   <style>
   /* ── Lang toggle ── */
-  .lang-btn{background:none;border:1px solid var(--line);border-radius:100px;font-family:var(--mono);font-size:.68rem;font-weight:500;color:var(--text-muted);padding:.28rem .75rem;cursor:pointer;transition:.2s;letter-spacing:.04em;text-transform:uppercase}
-  .lang-btn:hover,.lang-btn.on{border-color:var(--white);color:var(--bg);background:var(--white)}
-  [data-lang="en"] .ko{display:none}
-  [data-lang="ko"] .en{display:none}
+  .lang-btn { background:none; border:1px solid var(--line); border-radius:100px; font-family:var(--mono); font-size:.68rem; font-weight:500; color:var(--text-muted); padding:.28rem .75rem; cursor:pointer; transition:.2s; letter-spacing:.04em; text-transform:uppercase }
+  .lang-btn:hover, .lang-btn.on { border-color:var(--white); color:var(--bg); background:var(--white) }
+  [data-lang="en"] .ko { display:none }
+  [data-lang="ko"] .en { display:none }
 
   /* ── Achievements ── */
-  .achv-section{padding:5rem 0;border-top:1px solid var(--line);background:var(--bg)}
-  .achv-inner{max-width:1400px;margin:0 auto;padding:0 max(2rem,4vw)}
+  .achv-section { padding:5rem 0; border-top:1px solid var(--line); background:var(--bg) }
+  .achv-inner { max-width:1400px; margin:0 auto; padding:0 max(2rem,4vw) }
 
-  /* filter tabs */
-  .achv-tab{background:transparent;border:1px solid var(--line);border-radius:100px;font-family:var(--mono);font-size:.72rem;font-weight:500;color:var(--text-muted);padding:.35rem 1rem;cursor:pointer;transition:.2s;text-transform:uppercase}
-  .achv-tab:hover{border-color:var(--text-muted);color:var(--white)}
-  .achv-tab.on{background:var(--white);border-color:var(--white);color:var(--bg);font-weight:700}
+  .achv-list { display:flex; flex-direction:column }
+  .arow { display:grid; grid-template-columns:120px 1fr; gap:1.25rem; padding:1.5rem 0; border-bottom:1px solid var(--line); align-items:start }
+  .arow:first-child { border-top:1px solid var(--line) }
+  .arow.hidden { display:none }
+  .atag { display:inline-flex; align-items:center; font-size:.6rem; font-family:var(--mono); font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:.3rem .6rem; border-radius:0; white-space:nowrap; margin-top:.15rem; border:1px solid var(--line) }
+  .atag.award { color:var(--accent); border-color:var(--accent) }
+  .ainfo { display:flex; flex-direction:column; gap:.4rem }
+  .atitle { font-size:1.05rem; font-weight:600; color:var(--white); line-height:1.4; letter-spacing:-0.02em }
+  .ameta { display:flex; flex-wrap:wrap; gap:.5rem .75rem; align-items:center; margin-top:0.2rem }
+  .aorg { font-size:.8rem; color:var(--white); font-weight:500 }
+  .adate { font-size:.75rem; color:var(--text-muted); flex-shrink:0; font-family:var(--mono) }
+  .adate::before { content:'·'; margin-right:.5rem; color:var(--line) }
+  .arole { font-size:.75rem; color:var(--text-muted) }
+  .arole::before { content:'·'; margin-right:.5rem; color:var(--line) }
 
-  /* list rows */
-  .achv-list{display:flex;flex-direction:column}
-  .arow{display:grid;grid-template-columns:120px 1fr;gap:1.25rem;padding:1.5rem 0;border-bottom:1px solid var(--line);align-items:start}
-  .arow:first-child{border-top:1px solid var(--line)}
-  .arow.hidden{display:none}
-  .atag{display:inline-flex;align-items:center;font-size:.6rem;font-family:var(--mono);font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .6rem;border-radius:0;white-space:nowrap;margin-top:.15rem;border:1px solid var(--line)}
-  .atag.paper{color:#fff;}
-  .atag.exhibition{color:#fff;}
-  .atag.award{color:var(--accent);border-color:var(--accent)}
-  .atag.research{color:#fff;}
-  .ainfo{display:flex;flex-direction:column;gap:.4rem}
-  .atitle{font-size:1.05rem;font-weight:600;color:var(--white);line-height:1.4;letter-spacing:-0.02em}
-  .ameta{display:flex;flex-wrap:wrap;gap:.5rem .75rem;align-items:center;margin-top:0.2rem}
-  .aorg{font-size:.8rem;color:var(--white);font-weight:500}
-  .aorg a{color:var(--white);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .2s}
-  .aorg a:hover{border-color:var(--accent);color:var(--accent)}
-  .adate{font-size:.75rem;color:var(--text-muted);flex-shrink:0;font-family:var(--mono)}
-  .adate::before{content:'·';margin-right:.5rem;color:var(--line)}
-  .arole{font-size:.75rem;color:var(--text-muted)}
-  .arole::before{content:'·';margin-right:.5rem;color:var(--line)}
-
-  @media(max-width:640px){.arow{grid-template-columns:1fr;gap:.5rem;padding:1.2rem 0}}
-
-  /* ── Teaching list ── */
-  .teach-list{margin-top:1.5rem;display:flex;flex-direction:column;gap:0}
-  .teach-row{display:flex;justify-content:space-between;align-items:baseline;padding:1rem 0;border-bottom:1px solid var(--line)}
-  .teach-row:first-child{border-top:1px solid var(--line)}
-  .teach-name{font-size:.95rem;font-weight:600;color:var(--white)}
-  .teach-school{font-size:.8rem;color:var(--text-muted);font-family:var(--mono)}
-
-  @media(max-width:900px){.achv-grid{grid-template-columns:1fr}}
+  @media(max-width:640px){ .arow { grid-template-columns:1fr; gap:.5rem; padding:1.2rem 0 } }
   </style>
 </head>
 <body>
@@ -65,13 +45,13 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div style="width:100%;max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between">
-      <a href="#home" class="nav-logo" style="font-family:'JetBrains Mono','Courier New',monospace;font-size:1.1rem;letter-spacing:-0.05em;font-weight:700;">
-        S<em style="font-style:italic;">AI</em>OUL
+      <a href="#home" class="nav-logo">
+        Jungryun Kwon<span class="accent-dot"></span>
       </a>
       <ul class="nav-links">
-        <li><a href="about.html" class="nav-link">About SAIOUL</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
         <li><a href="#works" class="nav-link">Works</a></li>
-        <li><a href="archive.html" class="nav-link">Teaching</a></li>
+        <li><a href="archive.html" class="nav-link">Teaching & CV</a></li>
         <li><a href="about.html#contact" class="nav-link nav-cta">Contact</a></li>
         <li>
           <div style="display:flex;gap:.3rem">
@@ -86,179 +66,239 @@
 
   <div class="mobile-menu" id="mobileMenu">
     <ul>
-      <li><a href="about.html" onclick="closeMobile()">About SAIOUL</a></li>
+      <li><a href="about.html" onclick="closeMobile()">About</a></li>
       <li><a href="#works" onclick="closeMobile()">Works</a></li>
-      <li><a href="archive.html" onclick="closeMobile()">Teaching</a></li>
+      <li><a href="archive.html" onclick="closeMobile()">Teaching & CV</a></li>
       <li><a href="about.html#contact" onclick="closeMobile()">Contact</a></li>
     </ul>
   </div>
 
-  <!-- HERO: SAIOUL KINETIC STEGANOGRAPHY -->
-  <section id="home" style="position:relative;height:95vh;margin:2.5vh;border-radius:24px;overflow:hidden;background:#050505;">
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;700&family=Noto+Sans+KR:wght@300;700;900&display=swap');
-      .saioul-ai { font-family:'JetBrains Mono','Courier New',monospace; font-style:italic; display:inline; }
-      .human-chaos-container {
-        position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-        width:100%; text-align:center; pointer-events:none;
-        filter:url(#saioul-distortion); -webkit-filter:url(#saioul-distortion);
-        z-index:30;
-      }
-      .mega-mass {
-        font-size:clamp(5rem,20vw,26rem); font-weight:900; line-height:0.7;
-        letter-spacing:-0.1em; text-transform:uppercase; color:#FFFFFF;
-        transform:scaleY(1.5); mix-blend-mode:normal; -webkit-mix-blend-mode:normal;
-        position:relative; display:inline-block;
-      }
-      .floating-kr {
-        position:absolute; font-family:'Noto Sans KR',sans-serif;
-        font-weight:900; font-size:clamp(1rem,2vw,2rem);
-        letter-spacing:-0.2em; color:#FFFFFF; opacity:0.4; white-space:nowrap;
-      }
-      .kr-1 { top:5%; left:5%; transform:skew(-20deg) rotate(-10deg); }
-      .kr-2 { bottom:5%; right:5%; transform:scaleY(-1) rotate(5deg); }
-      .glitch-slice {
-        position:absolute; top:50%; left:50%; width:100%;
-        transform:translate(-50%,-50%) scaleY(1.5);
-        font-size:clamp(5rem,20vw,26rem); font-weight:900; line-height:0.7;
-        letter-spacing:-0.1em; text-align:center; color:#FF2A00;
-        mix-blend-mode:difference; -webkit-mix-blend-mode:difference;
-        pointer-events:none;
-        animation:hardcore-glitch 2s infinite linear alternate-reverse;
-        z-index:31; opacity:0.9;
-      }
-      @keyframes hardcore-glitch {
-        0%   { clip-path:inset(20% 0 80% 0); transform:translate(-52%,-50%) scaleY(1.5); }
-        20%  { clip-path:inset(40% 0 50% 0); transform:translate(-55%,-50%) scaleY(1.5); }
-        40%  { clip-path:inset(10% 0 70% 0); transform:translate(-50%,-48%) scaleY(1.5); }
-        60%  { clip-path:inset(70% 0 10% 0); transform:translate(-47%,-50%) scaleY(1.5); }
-        80%  { clip-path:inset(50% 0 30% 0); transform:translate(-50%,-50%) scaleY(1.5); }
-        100% { clip-path:inset(15% 0 60% 0); transform:translate(-51%,-50%) scaleY(1.5); }
-      }
-    </style>
-
-    <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;">
-      <defs>
-        <filter id="saioul-distortion" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
-          <feTurbulence type="fractalNoise" baseFrequency="0.015 0.1" numOctaves="1" result="noise"/>
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="60" xChannelSelector="R" yChannelSelector="G"/>
-        </filter>
-      </defs>
-    </svg>
-
-    <div class="human-chaos-container">
-      <div class="floating-kr kr-1">서_울/그.리.드.오.류</div>
-      <div class="floating-kr kr-2">충돌__중첩__데이터모싱</div>
-      <div class="mega-mass">
-        S<span class="saioul-ai">AI</span>OUL<br>
-        S<span class="saioul-ai">AI</span>OUL
-      </div>
+  <!-- HERO SECTION -->
+  <section id="home" style="position:relative;min-height:85vh;margin:5vh 2.5vh 2vh;border-radius:16px;overflow:hidden;background:#050505;display:flex;flex-direction:column;justify-content:flex-end;padding:max(3rem,6vw);border:1px solid rgba(255,255,255,0.06);">
+    <div style="position:absolute;inset:0;background:radial-gradient(circle at 80% 20%, rgba(255,42,0,0.08) 0%, transparent 60%);pointer-events:none"></div>
+    <div style="max-width:1200px;position:relative;z-index:2">
+      <span style="font-family:var(--mono);font-size:0.85rem;color:var(--accent);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.5rem;display:inline-block;font-weight:700;">
+        JUNGRYUN KWON — SPATIAL & PUBLIC INSTALLATION
+      </span>
+      <h1 style="font-size:clamp(2.8rem,7.5vw,6rem);font-weight:900;letter-spacing:-0.04em;line-height:0.98;margin-bottom:2rem;color:var(--white);text-transform:uppercase;">
+        STRATA OF<br/>SPATIAL THOUGHT
+      </h1>
+      <p style="font-size:clamp(1rem,1.8vw,1.25rem);color:var(--text-muted);max-width:700px;line-height:1.6;font-weight:300;">
+        <span class="ko">건축, 공간 인스톨레이션, 조형 및 인터랙티브 미디어를 아우르며 독서와 기억, 장소의 사유를 시각적 지층으로 재해석하는 권정륜의 포트폴리오입니다.</span>
+        <span class="en">Portfolio of Jungryun Kwon exploring spatial installation, public art, architecture, and interactive media — translating human contemplation and place into layered physical form.</span>
+      </p>
     </div>
-
-    <div class="glitch-slice">
-      S<span class="saioul-ai">AI</span>OUL<br>
-      S<span class="saioul-ai">AI</span>OUL
-    </div>
-
-
   </section>
 
-  <!-- WORKS -->
-  <section id="works" style="padding:5rem 0 3rem">
-    <div style="max-width:1400px;margin:0 auto;padding:0 max(2rem,3vw)">
-      <div style="padding:0 0 2rem">
-        <p class="section-label">Selected Works</p>
-        <h2 class="section-title">Works</h2>
-      </div>
-      <div class="filter-bar" style="justify-content:flex-start;margin-bottom:2rem">
+  <!-- WORKS SECTION -->
+  <section id="works" style="padding-top:4rem">
+    <div class="section-header">
+      <span class="section-label">SELECTED WORKS</span>
+      <h2 class="section-title">Works</h2>
+      <div class="filter-bar">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="spatial">Spatial Design</button>
-        <button class="filter-btn" data-filter="object">Object Design</button>
-        <button class="filter-btn" data-filter="visual">Visual & Media</button>
+        <button class="filter-btn" data-filter="spatial">Spatial & Installation</button>
+        <button class="filter-btn" data-filter="object">Furniture & Object</button>
+        <button class="filter-btn" data-filter="visual">Media & AI</button>
         <button class="filter-btn" data-filter="research">Research</button>
       </div>
     </div>
-    <div class="works-grid" id="worksGrid" style="max-width:1400px;margin:0 auto;padding:0 max(2rem,3vw)">
-      <article class="work-card large" data-category="visual" data-title="Up Breeze the Marine Debris" data-year="2023" data-link="project_space10.html">
-        <div class="card-visual" style="background:#0a0a0a;overflow:hidden;position:relative"><img src="assets/space10/00.PNG" alt="SPACE10 Thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/></div>
-        <div class="card-info"><span class="card-cat">Media & AI · SPACE10 Competition</span><h3 class="card-title">Up Breeze the Marine Debris <span style="font-size:0.6em; background:var(--accent); color:var(--bg); padding:0.1rem 0.3rem;">WINNER</span></h3><span class="card-year">2023</span></div>
-      </article>
 
-      <article class="work-card large" data-category="visual" data-title="S_AI_OUL" data-year="2026" data-desc-ko="타이포그래피와 인터랙티브 미디어를 결합하여 서울의 역동성과 정체성을 탐구한 디자인 작업. 'SEOUL'과 'AI'를 교차시킨 시각 언어를 통해 다이내믹한 조형을 제안합니다." data-desc-en="A design piece exploring the dynamism and identity of Seoul through the intersection of typography and interactive media, combining 'SEOUL' and 'AI'." data-link="project_saioul.html">
-        <style>
-          @keyframes thumbnailFade { 0%, 25% { opacity: 1; } 33.33%, 91.66% { opacity: 0; } 100% { opacity: 1; } }
-          .crossfade-img { width: 100%; height: 100%; object-fit: cover; animation: thumbnailFade 9s infinite; transition: transform .5s cubic-bezier(.4,0,.2,1); }
-          .crossfade-wrapper:hover .crossfade-img { transform: scale(1.04); }
-        </style>
-        <div class="card-visual crossfade-wrapper" style="background:#0a0a0a;overflow:hidden;position:relative;">
-          <img src="assets/saioul/00-1.jpg" alt="S_AI_OUL Thumbnail 1" class="crossfade-img" style="display:block; animation-delay: 0s;">
-          <img src="assets/saioul/00-2.jpg" alt="S_AI_OUL Thumbnail 2" class="crossfade-img" style="position:absolute; top:0; left:0; animation-delay: 3s;">
-          <img src="assets/saioul/00-3.jpg" alt="S_AI_OUL Thumbnail 3" class="crossfade-img" style="position:absolute; top:0; left:0; animation-delay: 6s;">
+    <div class="works-grid" id="worksGrid">
+      
+      <!-- 1. FEATURED: STRATA OF CONTEMPLATION -->
+      <a href="project_strata.html" class="work-card featured" data-category="spatial" data-title="Strata of Contemplation" data-year="2026">
+        <div class="card-visual">
+          <video autoplay loop muted playsinline poster="assets/strata/cover.jpg">
+            <source src="assets/strata/strata_video.mp4" type="video/mp4">
+          </video>
         </div>
-        <div class="card-info"><span class="card-cat">Media & AI · Slanted Magazine #48</span><h3 class="card-title">S_AI_OUL</h3><span class="card-year">2026</span></div>
-      </article>
+        <div class="card-info">
+          <div class="card-cat">
+            <span>Spatial Installation · Starfield Library COEX</span>
+            <span class="badge-tag grand-prize">GRAND PRIZE</span>
+          </div>
+          <h3 class="card-title">사유의 지층 (Strata of Contemplation)</h3>
+          <span class="card-year">2026 · Starfield Library COEX Mall</span>
+          <p class="card-desc">
+            <span class="ko">서울 코엑스 별마당도서관 개관 9주년 제8회 열린 아트 공모전 대상 수상작. 얇은 종이를 겹겹이 쌓아 독서와 생각이 축적되는 과정을 시각화하고, 관람객의 움직임에 따라 얼굴 형상이 드러나는 착시 구조의 대형 인스톨레이션.</span>
+            <span class="en">Grand Prize Winner at the 8th Starfield Library Open Art Competition. A paper-based public installation translating accumulated reading and human contemplation into layered paper strata at COEX Mall, Seoul.</span>
+          </p>
+        </div>
+      </a>
 
-      <article class="work-card large" data-category="spatial" data-title="Shaking Sanctuary: Urban Shade" data-year="2023" data-desc-ko="두바이 디자인 위크 실외 인스톨레이션. 사막 식물에서 영감받은 하얀 수련형 조형물 군집이 도시 속 피난처를 만들어내는 공간적 경험을 탐구." data-desc-en="Outdoor installation at Dubai Design Week 2023 (d3). A forest of white lily-pad structures inspired by desert flora, creating an urban sanctuary through shade and shadow." data-link="project_dubai.html">
-        <div class="card-visual" style="background:#e8f0f8;overflow:hidden;position:relative"><img src="assets/work_dubai/00.jpg" alt="Shaking Sanctuary: Urban Shade — Dubai Design Week 2023" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/></div>
-        <div class="card-info"><span class="card-cat">Installation · Dubai Design Week 2023</span><h3 class="card-title">Shaking Sanctuary: Urban Shade <span style="font-size:0.6em; background:var(--accent); color:var(--bg); padding:0.1rem 0.3rem;">SELECTED</span></h3><span class="card-year">2023</span></div>
-      </article>
+      <!-- 2. SHAKING SANCTUARY -->
+      <a href="project_dubai.html" class="work-card" data-category="spatial" data-title="Shaking Sanctuary: Urban Shade" data-year="2023">
+        <div class="card-visual">
+          <img src="assets/work_dubai/00.jpg" alt="Shaking Sanctuary: Urban Shade — Dubai Design Week 2023"/>
+        </div>
+        <div class="card-info">
+          <div class="card-cat">
+            <span>Installation · Dubai Design Week</span>
+            <span class="badge-tag selected">SELECTED</span>
+          </div>
+          <h3 class="card-title">Shaking Sanctuary: Urban Shade</h3>
+          <span class="card-year">2023 · Dubai Design Week (d3)</span>
+        </div>
+      </a>
 
-      <article class="work-card large" data-category="spatial" data-title="Hass Project" data-year="2023" data-link="project_hass.html">
-        <div class="card-visual" style="background:#0a0a0a;overflow:hidden;position:relative"><img src="assets/hass/00.jpg" alt="Hass Project Thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/></div>
-        <div class="card-info"><span class="card-cat">Sustainable Art · Exhibition</span><h3 class="card-title">Hass Project <span style="font-size:0.6em; background:var(--accent); color:var(--bg); padding:0.1rem 0.3rem;">SELECTED</span></h3><span class="card-year">2023</span></div>
-      </article>
+      <!-- 3. UP BREEZE THE MARINE DEBRIS -->
+      <a href="project_space10.html" class="work-card" data-category="visual" data-title="Up Breeze the Marine Debris" data-year="2023">
+        <div class="card-visual">
+          <img src="assets/space10/00.PNG" alt="SPACE10 Competition Winner"/>
+        </div>
+        <div class="card-info">
+          <div class="card-cat">
+            <span>Media & AI · SPACE10 Competition</span>
+            <span class="badge-tag winner">WINNER</span>
+          </div>
+          <h3 class="card-title">Up Breeze the Marine Debris</h3>
+          <span class="card-year">2023 · SPACE10 Global Competition</span>
+        </div>
+      </a>
 
-      <article class="work-card large" data-category="spatial" data-title="환영하옴(Ω)니다" data-year="2025" data-desc-ko="Pin Branding 팀 전시, 서울대학교 문화예술원(ICA Seoul). 멈춘 발전소를 관람자의 움직임으로 다시 활성화하는 공간적 회로 — 장소의 역사와 현재를 연결하는 설치 작업." data-desc-en="Group exhibition by Pin Branding, ICA Seoul (SNU). Proposing a decommissioned power plant as a spatial circuit reactivated by visitors' movement — connecting the history and present of place." data-link="project_welcome.html">
-        <div class="card-visual" style="background:#1a1410;overflow:hidden;position:relative"><img src="assets/welcome/00.png" alt="환영하옴니다 ICA Seoul exhibition" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/></div>
-        <div class="card-info"><span class="card-cat">Installation · ICA Seoul, SNU</span><h3 class="card-title">환영하옴(Ω)니다 <span style="font-size:0.6em; background:var(--accent); color:var(--bg); padding:0.1rem 0.3rem;">SELECTED</span></h3><span class="card-year">2025</span></div>
-      </article>
+      <!-- 4. MEUT -->
+      <a href="project_meut.html" class="work-card" data-category="spatial" data-title="Meut" data-year="2024">
+        <div class="card-visual">
+          <img src="assets/meut/00.jpeg" alt="Meut Public Art"/>
+        </div>
+        <div class="card-info">
+          <div class="card-cat">
+            <span>Space · Library Public Art</span>
+            <span class="badge-tag grand-prize">GRAND PRIZE</span>
+          </div>
+          <h3 class="card-title">Meut (뭍)</h3>
+          <span class="card-year">2024 · Library Public Art Project</span>
+        </div>
+      </a>
 
-      <article class="work-card large" data-category="spatial" data-title="SHAA" data-year="2025" data-link="project_shaa.html">
-        <div class="card-visual" style="background:#0a0a0a;overflow:hidden;position:relative"><img src="assets/shaa/00.png" alt="SHAA Thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/></div>
-        <div class="card-info"><span class="card-cat">Public Art · Space</span><h3 class="card-title">SHAA <span style="font-size:0.6em; background:var(--accent); color:var(--bg); padding:0.1rem 0.3rem;">AWARD</span></h3><span class="card-year">2025 · Songdo Hillstate</span></div>
-      </article>
+      <!-- 5. S_AI_OUL -->
+      <a href="project_saioul.html" class="work-card" data-category="visual" data-title="S_AI_OUL" data-year="2026">
+        <div class="card-visual">
+          <img src="assets/saioul/00-1.jpg" alt="S_AI_OUL Slanted Magazine"/>
+        </div>
+        <div class="card-info">
+          <div class="card-cat">
+            <span>Media & AI · Slanted Magazine #48</span>
+          </div>
+          <h3 class="card-title">S_AI_OUL</h3>
+          <span class="card-year">2026 · Interactive Typography</span>
+        </div>
+      </a>
 
-      <article class="work-card large" data-category="visual" data-title="DreamUs" data-year="2024" data-link="project_template.html">
-        <div class="card-visual" style="background:#0a0a0a;overflow:hidden;position:relative"><img src="assets/dreamus/00.jpg" alt="DreamUs Thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/></div>
-        <div class="card-info"><span class="card-cat">Media & AI · ARKO Metaverse</span><h3 class="card-title">DreamUs <span style="font-size:0.6em; background:var(--accent); color:var(--bg); padding:0.1rem 0.3rem;">SELECTED</span></h3><span class="card-year">2024</span></div>
-      </article>
+      <!-- 6. 환영하옴니다 -->
+      <a href="project_welcome.html" class="work-card" data-category="spatial" data-title="환영하옴(Ω)니다" data-year="2025">
+        <div class="card-visual">
+          <img src="assets/welcome/00.png" alt="환영하옴니다 ICA Seoul exhibition"/>
+        </div>
+        <div class="card-info">
+          <div class="card-cat">
+            <span>Installation · ICA Seoul (SNU)</span>
+            <span class="badge-tag selected">SELECTED</span>
+          </div>
+          <h3 class="card-title">환영하옴(Ω)니다</h3>
+          <span class="card-year">2025 · Pin Branding Group Exhibition</span>
+        </div>
+      </a>
 
-      <article class="work-card" data-category="object" data-title="Verge Chair" data-year="2025" data-desc-ko="2025 광주디자인비엔날레 초청 출품작. 앉음과 구조 사이의 경계(verge)를 탐구하는 의자 디자인. 콘크리트 질감의 형태가 앉는다는 행위의 의미를 재질문한다." data-desc-en="Selected for 2025 Gwangju Design Biennale. A chair design exploring the verge between sitting and structure — a concrete-textured form that questions the act of sitting itself.">
-        <div class="card-visual" style="background:#e8e8e8;overflow:hidden;position:relative"><img src="assets/verge chair/00.jpg" alt="Verge Chair Gwangju Design Biennale" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/></div>
-        <div class="card-info"><span class="card-cat">Furniture · Gwangju Design Biennale</span><h3 class="card-title">Verge Chair</h3><span class="card-year">2025</span></div>
-      </article>
+      <!-- 7. SHAA -->
+      <a href="project_shaa.html" class="work-card" data-category="spatial" data-title="SHAA" data-year="2025">
+        <div class="card-visual">
+          <img src="assets/shaa/00.png" alt="SHAA Public Art"/>
+        </div>
+        <div class="card-info">
+          <div class="card-cat">
+            <span>Public Art · Architecture</span>
+            <span class="badge-tag award">AWARD</span>
+          </div>
+          <h3 class="card-title">SHAA</h3>
+          <span class="card-year">2025 · Songdo Hillstate</span>
+        </div>
+      </a>
 
-      <article class="work-card large" data-category="spatial" data-title="Meut" data-year="2024" data-link="project_meut.html">
-        <div class="card-visual" style="background:#0a0a0a;overflow:hidden;position:relative"><img src="assets/meut/00.jpeg" alt="Meut Thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/></div>
-        <div class="card-info"><span class="card-cat">Space · Installation</span><h3 class="card-title">Meut <span style="font-size:0.6em; background:var(--accent); color:var(--bg); padding:0.1rem 0.3rem;">GRAND PRIZE</span></h3><span class="card-year">2024 · Library Public Art</span></div>
-      </article>
+      <!-- 8. VERGE CHAIR -->
+      <div class="work-card" data-category="object" data-title="Verge Chair" data-year="2025">
+        <div class="card-visual">
+          <img src="assets/verge chair/00.jpg" alt="Verge Chair Gwangju Design Biennale"/>
+        </div>
+        <div class="card-info">
+          <div class="card-cat">
+            <span>Furniture · Gwangju Design Biennale</span>
+            <span class="badge-tag selected">SELECTED</span>
+          </div>
+          <h3 class="card-title">Verge Chair</h3>
+          <span class="card-year">2025 · 2025 Gwangju Design Biennale</span>
+        </div>
+      </div>
 
-      <article class="work-card" data-category="object" data-title="Striped Light-ness" data-year="2024" data-desc-ko="밀라노 살로네 전시작. 빛의 줄무늬가 만들어내는 경쾌함과 무게감의 대비를 목재와 조명으로 구현한 가구·조명 오브제." data-desc-en="Salone Internazionale del Mobile, Milan Design Week 2024. A furniture-lighting piece exploring the contrast between levity and weight through striped light and natural wood.">
-        <div class="card-visual" style="background:#f0f0f0;overflow:hidden;position:relative"><img src="assets/milan/00.jpg" alt="Striped Light-ness Milan" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/></div>
-        <div class="card-info"><span class="card-cat">Furniture · Salone del Mobile</span><h3 class="card-title">Striped Light-ness</h3><span class="card-year">2024</span></div>
-      </article>
+      <!-- 9. STRIPED LIGHT-NESS -->
+      <div class="work-card" data-category="object" data-title="Striped Light-ness" data-year="2024">
+        <div class="card-visual">
+          <img src="assets/milan/00.jpg" alt="Striped Light-ness Milan Design Week"/>
+        </div>
+        <div class="card-info">
+          <div class="card-cat">
+            <span>Furniture · Salone del Mobile</span>
+          </div>
+          <h3 class="card-title">Striped Light-ness</h3>
+          <span class="card-year">2024 · Salone del Mobile, Milan</span>
+        </div>
+      </div>
 
-      <article class="work-card large" data-category="research" data-title="Error as Form" data-year="2024" data-link="project_error.html">
-        <div class="card-visual" style="background:#0a0a0a;overflow:hidden;position:relative"><img src="assets/error/00.jpg" alt="Error as form Thumbnail" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/></div>
-        <div class="card-info"><span class="card-cat">Research · ADR Journal</span><h3 class="card-title">Error as Form <span style="font-size:0.6em; background:var(--accent); color:var(--bg); padding:0.1rem 0.3rem;">PUB</span></h3><span class="card-year">Jungryun Kwon</span></div>
-      </article>
+      <!-- 10. HASS PROJECT -->
+      <a href="project_hass.html" class="work-card" data-category="spatial" data-title="Hass Project" data-year="2023">
+        <div class="card-visual">
+          <img src="assets/hass/00.jpg" alt="Hass Project Thumbnail"/>
+        </div>
+        <div class="card-info">
+          <div class="card-cat">
+            <span>Sustainable Art · Exhibition</span>
+            <span class="badge-tag selected">SELECTED</span>
+          </div>
+          <h3 class="card-title">Hass Project</h3>
+          <span class="card-year">2023</span>
+        </div>
+      </a>
 
-      <article class="work-card" data-category="research" data-title="Designer-Generative AI Ideation Process" data-year="2024" data-desc-ko="Archives of Design Research 우수논문 선정 및 표지 디자인. 제품 디자인 초기 개념 탐색에서 AI와 디자이너 간 협업 이미지 생성 프로세스 연구. 제1저자, SCOPUS 등재." data-desc-en="Cover design & featured paper, Archives of Design Research (SCOPUS). Research on AI-collaborative ideation aligned with designer intent in early-stage concept exploration. 1st Author.">
-        <div class="card-visual" style="background:#fff;overflow:hidden;position:relative;border:1px solid #e5e5e5"><img src="assets/vivant archive/00.jpg" alt="Archives of Design Research cover" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/></div>
-        <div class="card-info"><span class="card-cat">Publication · Archives of Design Research</span><h3 class="card-title">Designer-Generative AI Ideation Process</h3><span class="card-year">2024</span></div>
-      </article>
+      <!-- 11. ERROR AS FORM -->
+      <a href="project_error.html" class="work-card" data-category="research" data-title="Error as Form" data-year="2024">
+        <div class="card-visual">
+          <img src="assets/error/00.jpg" alt="Error as form Thumbnail"/>
+        </div>
+        <div class="card-info">
+          <div class="card-cat">
+            <span>Research · ADR Journal</span>
+            <span class="badge-tag winner">PUB</span>
+          </div>
+          <h3 class="card-title">Error as Form</h3>
+          <span class="card-year">2024 · Jungryun Kwon</span>
+        </div>
+      </a>
+
+      <!-- 12. GENERATIVE AI IDEATION PROCESS -->
+      <div class="work-card" data-category="research" data-title="Designer-Generative AI Ideation Process" data-year="2024">
+        <div class="card-visual">
+          <img src="assets/vivant archive/00.jpg" alt="Archives of Design Research cover"/>
+        </div>
+        <div class="card-info">
+          <div class="card-cat">
+            <span>Publication · Archives of Design Research</span>
+          </div>
+          <h3 class="card-title">Designer-Generative AI Ideation Process</h3>
+          <span class="card-year">2024 · SCOPUS 1st Author</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
-
-
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-logo" style="font-family:'JetBrains Mono','Courier New',monospace;letter-spacing:-0.05em;">S<em>AI</em>OUL</span>
-      <span class="footer-copy">© 2025 ryuniss@snu.ac.kr</span>
+      <span class="footer-logo">Jungryun Kwon</span>
+      <span class="footer-copy">© 2026 ryuniss@snu.ac.kr</span>
     </div>
   </footer>
-
 
   <script>
   // Current lang
@@ -273,13 +313,6 @@
     document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
   }
 
-  // Cursor
-  const dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing');
-  document.addEventListener('mousemove',e=>{
-    dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';
-    ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';
-  });
-
   // Nav scroll
   window.addEventListener('scroll',()=>{
     document.getElementById('nav').classList.toggle('scrolled',scrollY>40);
@@ -287,8 +320,8 @@
 
   // Mobile menu
   const hamburger=document.getElementById('hamburger'),menu=document.getElementById('mobileMenu');
-  hamburger.addEventListener('click',()=>menu.classList.toggle('open'));
-  function closeMobile(){menu.classList.remove('open')}
+  if(hamburger) hamburger.addEventListener('click',()=>menu.classList.toggle('open'));
+  function closeMobile(){if(menu) menu.classList.remove('open')}
 
   // Works filter
   document.querySelectorAll('.filter-btn').forEach(btn=>{
@@ -301,76 +334,6 @@
       });
     });
   });
-
-  // Project detail link routing
-  document.querySelectorAll('.work-card').forEach(card=>{
-    card.addEventListener('click',()=>{
-      if (card.dataset.link) {
-        window.location.href = card.dataset.link;
-      } else {
-        window.location.href = 'project_template.html';
-      }
-    });
-  });
-
-  // Achievements filter
-  document.querySelectorAll('.achv-tab').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      document.querySelectorAll('.achv-tab').forEach(b=>b.classList.remove('on'));
-      btn.classList.add('on');
-      const f=btn.dataset.af;
-      document.querySelectorAll('.arow').forEach(r=>{
-        r.classList.toggle('hidden',f!=='all'&&r.dataset.acat!==f);
-      });
-    });
-  });
-
-  // Reveal
-  const obs=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.1});
-  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-  // Recolor particles on season change
-  window.addEventListener('seasonchange', (e) => {
-    const isMobile = window.innerWidth <= 640;
-  
-    // Parallax 3D Scene Effect
-    const heroScene = document.getElementById('heroScene');
-    if (heroScene && !isMobile) {
-      document.addEventListener('mousemove', e => {
-        const x = (e.clientX / window.innerWidth - 0.5) * 25; // max 12.5 deg
-        const y = (e.clientY / window.innerHeight - 0.5) * -25;
-        
-        heroScene.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-      });
-      
-      // Reset on leave
-      document.addEventListener('mouseleave', () => {
-        heroScene.style.transform = `rotateY(0deg) rotateX(0deg)`;
-      });
-    }
-    const colors = window.SeasonTheme?.getParticleColors(e.detail.season);
-    if (colors) {
-      window._seasonParticleColors = colors;
-    }
-  });
-  // Set initial particle colors
-  if (window.SeasonTheme) {
-    window._seasonParticleColors = window.SeasonTheme.getParticleColors();
-  }
-  </script>
-  <script>
-    // Auto-fallback for thumbnail extensions (.jpg -> .png -> .jpeg)
-    document.addEventListener("DOMContentLoaded", () => {
-      const images = document.querySelectorAll(".card-visual img");
-      images.forEach(img => {
-        img.onerror = function() {
-          if (this.src.includes(".jpg")) {
-            this.src = this.src.replace(".jpg", ".png");
-          } else if (this.src.includes(".png")) {
-            this.src = this.src.replace(".png", ".jpeg");
-          }
-        };
-      });
-    });
   </script>
 </body>
 </html>
