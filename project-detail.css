@@ -1,0 +1,130 @@
+/* ─────────────────────────────────────────
+   Kwon Jungryun – Project Detail Page Style
+   Dark / Inter Light / Minimal
+───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #080808;
+  --surface:   #101010;
+  --text:      #e0e0dc;
+  --muted:     #555555;
+  --line:      #1e1e1e;
+  --accent:    #FF2A00;
+  --sans: 'Inter', 'Noto Sans KR', sans-serif;
+  --mono: 'JetBrains Mono', 'Courier New', monospace;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html { font-size: 16px; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+body {
+  background: var(--bg); color: var(--text);
+  font-family: var(--sans); font-weight: 300;
+  display: flex; overflow-x: hidden; min-height: 100vh;
+}
+
+/* ── Left Panel ── */
+.detail-aside {
+  position: fixed; top: 0; left: 0; width: 32vw; height: 100vh;
+  border-right: 1px solid var(--line);
+  padding: 2.5rem max(1.5rem, 2.5vw);
+  display: flex; flex-direction: column; gap: 0;
+  background: var(--bg); z-index: 10; overflow-y: auto;
+}
+
+.detail-back {
+  text-decoration: none; color: var(--muted);
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 400;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  transition: color 0.2s; margin-bottom: 3rem;
+}
+.detail-back:hover { color: var(--text); }
+
+.detail-index {
+  font-family: var(--mono); font-size: 0.68rem; color: var(--muted);
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.8rem;
+}
+
+.detail-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 200;
+  letter-spacing: -0.02em; line-height: 1.1;
+  color: var(--text); margin-bottom: 0.5rem;
+}
+
+.detail-subtitle {
+  font-size: 0.9rem; font-weight: 300; color: var(--muted);
+  margin-bottom: 2.5rem; letter-spacing: 0.01em;
+}
+
+/* Meta Table */
+.meta-list { list-style: none; border-top: 1px solid var(--line); margin-bottom: 2.5rem; }
+.meta-list li {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--line);
+  font-size: 0.78rem;
+}
+.meta-label { font-family: var(--mono); color: var(--muted); font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; flex-shrink: 0; }
+.meta-val { color: var(--text); text-align: right; word-break: break-word; font-weight: 300; }
+
+/* Award Tag */
+.award-tag {
+  display: inline-block; background: var(--accent); color: #000;
+  font-family: var(--mono); font-size: 0.6rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.25rem 0.5rem; margin-bottom: 1rem;
+}
+
+/* Description */
+.detail-desc {
+  font-size: 0.9rem; line-height: 1.85; color: var(--muted);
+  font-weight: 300; flex: 1;
+}
+.detail-desc p { margin-bottom: 1rem; }
+.detail-desc p:last-child { margin-bottom: 0; }
+.detail-desc strong { color: var(--text); font-weight: 400; }
+
+/* Footer in aside */
+.aside-foot {
+  margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--line);
+  font-family: var(--mono); font-size: 0.68rem; color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── Right Panel (scrollable media) ── */
+.detail-main {
+  margin-left: 32vw; width: 68vw; min-height: 100vh;
+  background: #000; display: flex; flex-direction: column;
+}
+
+.media-block {
+  position: relative; width: 100%;
+  border-bottom: 1px solid var(--line); background: #050505;
+}
+.media-block img {
+  width: 100%; display: block;
+  filter: brightness(0.92);
+  transition: filter 0.5s ease;
+}
+.media-block img:hover { filter: brightness(1.0); }
+
+.media-block video {
+  width: 100%; display: block; max-height: 90vh;
+  object-fit: contain; background: #000;
+}
+
+.media-caption {
+  padding: 0.7rem 1.5rem;
+  font-family: var(--mono); font-size: 0.68rem;
+  color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase;
+}
+
+/* ── Mobile ── */
+@media (max-width: 900px) {
+  body { flex-direction: column; }
+  .detail-aside {
+    position: static; width: 100%; height: auto;
+    border-right: none; border-bottom: 1px solid var(--line);
+  }
+  .detail-main { margin-left: 0; width: 100%; }
+}
