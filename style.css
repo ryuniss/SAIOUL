@@ -102,12 +102,6 @@ h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.03em; }
   transition: transform 0.4s var(--ease-fluid);
 }
 
-.work-card.featured {
-  grid-column: span 12; /* Featured spans full width */
-  margin-bottom: 1.5rem;
-}
-.work-card.featured .card-visual { height: 580px; aspect-ratio: auto; }
-
 .work-card.hidden { display: none !important; }
 
 /* ── Card Visual & Hover Overlay ── */
